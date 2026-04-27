@@ -12,7 +12,7 @@ import {
 } from "motion/react";
 import { SpotlightBeams } from "@/components/decor/spotlight-beams";
 import { LegalTeam } from "@/components/decor/legal-team";
-import { MarqueeStar } from "@/components/decor/marquee-star";
+import { Seal } from "@/components/decor/seal";
 import { Trustpilot } from "@/components/decor/trustpilot";
 import { EligibilityForm } from "@/components/sections/eligibility-form";
 
@@ -64,24 +64,24 @@ export const Hero = () => {
       </motion.div>
       <div className="grain pointer-events-none absolute inset-0 -z-10 opacity-30" />
 
-      {/* Distant marquee stars — drift up as you scroll */}
+      {/* Distant chambers seals — drift up as you scroll, much quieter than marquee stars */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.6, rotate: -10 }}
-        animate={{ opacity: 0.55, scale: 1, rotate: 0 }}
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 0.18, scale: 1 }}
         transition={{ duration: 1.4, ease: EASE_OUT, delay: 0.4 }}
         style={{ y: starFarY, willChange: "transform" }}
-        className="absolute -right-20 top-32 z-0 hidden lg:block"
+        className="absolute -right-16 top-40 z-0 hidden lg:block"
       >
-        <MarqueeStar size={360} bulbs={28} />
+        <Seal size={300} variant="crest" />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, scale: 0.6, rotate: 14 }}
-        animate={{ opacity: 0.32, scale: 1, rotate: 0 }}
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 0.12, scale: 1 }}
         transition={{ duration: 1.4, ease: EASE_OUT, delay: 0.5 }}
         style={{ y: starSecondaryY, willChange: "transform" }}
-        className="absolute -left-24 top-[440px] z-0 hidden lg:block"
+        className="absolute -left-20 top-[440px] z-0 hidden lg:block"
       >
-        <MarqueeStar size={220} bulbs={22} />
+        <Seal size={200} variant="medallion" />
       </motion.div>
 
       {/* Top ornamental rule */}
@@ -207,30 +207,18 @@ export const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right — Stage with team & form */}
+          {/* Right — Counsel portrait & form */}
           <div className="relative flex flex-col items-center gap-8">
             <div className="relative aspect-[4/5] w-full max-w-md">
-              {/* Stage glow */}
-              <div className="stage-glow absolute -inset-x-6 bottom-0 h-1/2 rounded-[40px] blur-2xl" />
-              <div className="stage-floor absolute -bottom-2 left-1/2 h-12 w-[78%] -translate-x-1/2 rounded-[100%]" />
-              {/* Marquee star behind — parallax + scroll */}
+              {/* Subtle architectural backdrop — single chambers seal, low opacity */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.7 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.16 }}
                 transition={{ duration: 1.2, ease: EASE_OUT, delay: 0.6 }}
                 style={{ y: starNearY, willChange: "transform" }}
-                className="absolute -right-6 top-2 h-48 w-48 sm:-right-10 sm:top-0 sm:h-64 sm:w-64"
+                className="absolute inset-0 grid place-items-center"
               >
-                <MarqueeStar size={260} bulbs={26} />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.7 }}
-                animate={{ opacity: 0.7, scale: 1 }}
-                transition={{ duration: 1.2, ease: EASE_OUT, delay: 0.75 }}
-                style={{ y: starFarY, willChange: "transform" }}
-                className="absolute -left-8 bottom-10 hidden h-32 w-32 sm:block"
-              >
-                <MarqueeStar size={132} bulbs={18} />
+                <Seal size={420} variant="crest" />
               </motion.div>
               {/* Legal team illustration — gentle parallax + velocity-driven skew */}
               <motion.div

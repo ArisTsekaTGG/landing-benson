@@ -3,7 +3,7 @@
 import { motion, useTransform, useReducedMotion } from "motion/react";
 import { useSectionParallax } from "@/hooks/use-section-parallax";
 import { LegalTeam } from "@/components/decor/legal-team";
-import { MarqueeStar } from "@/components/decor/marquee-star";
+import { Seal } from "@/components/decor/seal";
 
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
 
@@ -64,15 +64,16 @@ export const Cta = () => {
             </motion.div>
 
             <div className="relative hidden h-[420px] lg:block">
+              {/* Architectural backdrop seal — replaces casino marquee star */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.85, rotate: -6 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, scale: 0.92 }}
+                whileInView={{ opacity: 0.18, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.1, ease: EASE_OUT }}
+                transition={{ duration: 1.2, ease: EASE_OUT }}
                 style={{ y: starY, willChange: "transform" }}
-                className="absolute -right-2 top-0 h-72 w-72"
+                className="absolute inset-0 grid place-items-center"
               >
-                <MarqueeStar size={300} bulbs={28} />
+                <Seal size={360} variant="crest" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
@@ -84,23 +85,24 @@ export const Cta = () => {
               >
                 <LegalTeam className="h-full w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]" />
               </motion.div>
+              {/* Restrained pill counter — no glow rings */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.7 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.9, delay: 0.4, ease: EASE_OUT }}
+                transition={{ duration: 0.7, delay: 0.4, ease: EASE_OUT }}
                 style={{ y: badgeY, willChange: "transform" }}
-                className="absolute right-4 top-32 grid h-44 w-44 place-items-center rounded-full border-2 border-gold-400/60 bg-[#06081a]/85 backdrop-blur"
+                className="absolute right-2 top-4 flex items-center gap-3 rounded-full border border-gold-400/40 bg-[#06081a]/80 px-4 py-2.5 backdrop-blur"
               >
-                <div className="text-center">
-                  <div className="text-[0.7rem] uppercase tracking-[0.18em] text-gold-300">
-                    Join over
+                <div className="text-right leading-tight">
+                  <div className="text-[0.62rem] uppercase tracking-[0.2em] text-gold-300">
+                    Already checking
                   </div>
-                  <div className="mt-1 font-display text-3xl font-semibold text-foreground">
-                    250,000<span className="text-magenta-400">+</span>
-                  </div>
-                  <div className="mt-1 max-w-[10ch] mx-auto text-[0.74rem] leading-tight text-foreground/65">
-                    already checking eligibility
+                  <div className="font-display text-[1.15rem] font-semibold text-foreground">
+                    250,000<span className="text-magenta-400">+</span>{" "}
+                    <span className="text-[0.74rem] font-normal text-foreground/65">
+                      eligibility checks
+                    </span>
                   </div>
                 </div>
               </motion.div>

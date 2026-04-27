@@ -46,9 +46,8 @@ export default function MotorFinancePage() {
               </>
             }
             aside={
-              <div className="relative aspect-[4/5] w-full max-w-md">
-                <div className="stage-glow absolute -inset-x-6 bottom-0 h-1/2 rounded-[40px] blur-2xl" />
-                <LegalTeam className="drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]" />
+              <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[28px] border border-gold-400/25 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]">
+                <LegalTeam />
               </div>
             }
           />

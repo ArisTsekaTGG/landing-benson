@@ -81,18 +81,20 @@ const CobyPortrait = ({ className }: { className?: string }) => (
     {/* smile */}
     <path d="M218 312 Q240 322 262 312" stroke="#3a2a1a" strokeWidth="2" fill="none" strokeLinecap="round" />
 
-    {/* magenta rim light */}
+    {/* magenta rim light — restrained */}
     <path
       d="M70 480 L60 600"
       stroke="url(#coby-rim)"
-      strokeWidth="6"
+      strokeWidth="3.5"
       fill="none"
-      opacity="0.9"
+      opacity="0.7"
     />
-    {/* gold star ornament behind shoulder */}
-    <g transform="translate(380 420)" opacity="0.7">
-      <path d="M0 -30 L9 -10 L30 -7 L13 6 L19 28 L0 16 L-19 28 L-13 6 L-30 -7 L-9 -10 Z" fill="#e8b86f" />
-      <circle cx="0" cy="0" r="4" fill="#06081a" />
+    {/* Architectural roundel — replaces the gold sparkle */}
+    <g transform="translate(380 430)" opacity="0.5">
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#d4a248" strokeWidth="0.9" />
+      <circle cx="0" cy="0" r="13" fill="none" stroke="#d4a248" strokeWidth="0.5" opacity="0.7" />
+      <line x1="-9" y1="0" x2="9" y2="0" stroke="#d4a248" strokeWidth="0.7" strokeLinecap="round" />
+      <line x1="0" y1="-9" x2="0" y2="9" stroke="#d4a248" strokeWidth="0.7" strokeLinecap="round" />
     </g>
   </svg>
 );
@@ -169,12 +171,14 @@ const DavidPortrait = ({ className }: { className?: string }) => (
     {/* slight smile */}
     <path d="M222 322 Q240 330 258 322" stroke="#3a2a1a" strokeWidth="2" fill="none" strokeLinecap="round" />
 
-    {/* gold rim light */}
-    <path d="M410 480 L420 600" stroke="url(#david-rim)" strokeWidth="6" fill="none" opacity="0.95" />
-    {/* magenta marquee star ornament */}
-    <g transform="translate(100 430)" opacity="0.7">
-      <path d="M0 -28 L8 -9 L28 -7 L12 5 L17 26 L0 14 L-17 26 L-12 5 L-28 -7 L-8 -9 Z" fill="#ff5aa3" />
-      <circle cx="0" cy="0" r="3.5" fill="#06081a" />
+    {/* gold rim light — restrained */}
+    <path d="M410 480 L420 600" stroke="url(#david-rim)" strokeWidth="3.5" fill="none" opacity="0.8" />
+    {/* Architectural roundel ornament */}
+    <g transform="translate(100 430)" opacity="0.5">
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#ff85bc" strokeWidth="0.9" />
+      <circle cx="0" cy="0" r="11" fill="none" stroke="#ff85bc" strokeWidth="0.5" opacity="0.7" />
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#ff85bc" strokeWidth="0.7" strokeLinecap="round" />
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#ff85bc" strokeWidth="0.7" strokeLinecap="round" />
     </g>
   </svg>
 );

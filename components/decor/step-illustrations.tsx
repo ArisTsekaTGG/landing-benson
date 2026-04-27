@@ -11,68 +11,109 @@ interface StepIconProps {
   className?: string;
 }
 
+/* Shared visual language across all four steps:
+ *   - thin gold strokes on a muted ink panel
+ *   - one restrained magenta accent per illustration
+ *   - no chunky fills, no bright primary colours, no sparkles
+ *   - reads like an engraved technical schematic on letterhead
+ */
+
+const STROKE = "#d4a248";
+const STROKE_FAINT = "rgba(232,184,111,0.45)";
+const ACCENT = "#ff5aa3";
+
 export const StepLaptop = ({ className }: StepIconProps) => (
   <svg {...baseProps} className={cn(baseProps.className, className)} aria-hidden>
-    <defs>
-      <linearGradient id="lap-screen" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#1c2554" />
-        <stop offset="100%" stopColor="#06081a" />
-      </linearGradient>
-    </defs>
-    {/* Laptop body */}
-    <rect x="40" y="36" width="160" height="100" rx="6" fill="#0a0e27" stroke="#d4a248" strokeWidth="2" />
-    <rect x="48" y="44" width="144" height="84" rx="3" fill="url(#lap-screen)" />
-    {/* Form list */}
-    <rect x="60" y="58" width="92" height="8" rx="2" fill="#f5efe0" opacity="0.95" />
-    <rect x="60" y="74" width="64" height="6" rx="2" fill="#f5efe0" opacity="0.5" />
-    {/* Checks */}
-    <circle cx="170" cy="62" r="6" fill="#ff2d8a" />
-    <path d="M167 62 L169 65 L173 60" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    <circle cx="170" cy="80" r="6" fill="#ff2d8a" />
-    <path d="M167 80 L169 83 L173 78" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    <rect x="60" y="92" width="120" height="6" rx="2" fill="#f5efe0" opacity="0.4" />
-    <rect x="60" y="104" width="80" height="6" rx="2" fill="#f5efe0" opacity="0.3" />
-    {/* Base */}
-    <path d="M28 138 L212 138 L222 150 L18 150 Z" fill="#06081a" stroke="#d4a248" strokeWidth="2" strokeLinejoin="round" />
-    <line x1="100" y1="144" x2="140" y2="144" stroke="#d4a248" strokeWidth="2" strokeLinecap="round" />
-    {/* Sparkle */}
-    <path
-      d="M210 28 L213 36 L221 39 L213 42 L210 50 L207 42 L199 39 L207 36 Z"
-      fill="#f3cf91"
-      className="twinkle"
+    {/* Laptop screen */}
+    <rect
+      x="50"
+      y="36"
+      width="140"
+      height="92"
+      rx="3"
+      fill="none"
+      stroke={STROKE}
+      strokeWidth="1.4"
     />
+    <rect
+      x="56"
+      y="42"
+      width="128"
+      height="80"
+      rx="2"
+      fill="none"
+      stroke={STROKE_FAINT}
+      strokeWidth="0.8"
+    />
+    {/* Form rows */}
+    <line x1="68" y1="58" x2="148" y2="58" stroke={STROKE} strokeWidth="1.2" strokeLinecap="round" />
+    <line x1="68" y1="68" x2="124" y2="68" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    <circle cx="166" cy="62" r="4" fill="none" stroke={ACCENT} strokeWidth="1.4" />
+    <path d="M163 62 L165.5 64 L169 60" stroke={ACCENT} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    <line x1="68" y1="86" x2="158" y2="86" stroke={STROKE} strokeWidth="1.2" strokeLinecap="round" />
+    <line x1="68" y1="96" x2="138" y2="96" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    <circle cx="166" cy="90" r="4" fill="none" stroke={ACCENT} strokeWidth="1.4" />
+    <path d="M163 90 L165.5 92 L169 88" stroke={ACCENT} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    <line x1="68" y1="110" x2="118" y2="110" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    {/* Laptop base */}
+    <path
+      d="M40 132 H200 L208 144 H32 Z"
+      fill="none"
+      stroke={STROKE}
+      strokeWidth="1.4"
+      strokeLinejoin="round"
+    />
+    <line x1="108" y1="138" x2="132" y2="138" stroke={STROKE} strokeWidth="1.2" strokeLinecap="round" />
   </svg>
 );
 
 export const StepClipboard = ({ className }: StepIconProps) => (
   <svg {...baseProps} className={cn(baseProps.className, className)} aria-hidden>
-    <defs>
-      <linearGradient id="clip-grad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#faf7f2" />
-        <stop offset="100%" stopColor="#ece2c9" />
-      </linearGradient>
-    </defs>
     {/* Clipboard */}
-    <rect x="68" y="36" width="104" height="128" rx="6" fill="url(#clip-grad)" stroke="#d4a248" strokeWidth="2" />
-    {/* Clip */}
-    <rect x="100" y="24" width="40" height="22" rx="4" fill="#1a1340" stroke="#d4a248" strokeWidth="2" />
-    {/* Lines */}
-    <line x1="84" y1="62" x2="156" y2="62" stroke="#1a1340" strokeWidth="2.4" strokeLinecap="round" />
-    <line x1="84" y1="78" x2="140" y2="78" stroke="#1a1340" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-    <line x1="84" y1="92" x2="148" y2="92" stroke="#1a1340" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
-    {/* Car badge */}
-    <rect x="84" y="108" width="72" height="42" rx="4" fill="#fff3da" stroke="#1a1340" strokeWidth="1.4" />
-    <path
-      d="M92 138 L96 122 Q98 116 104 116 L136 116 Q142 116 144 122 L148 138 Z"
-      fill="#1a1340"
+    <rect
+      x="74"
+      y="32"
+      width="92"
+      height="124"
+      rx="3"
+      fill="none"
+      stroke={STROKE}
+      strokeWidth="1.4"
     />
-    <circle cx="100" cy="142" r="4" fill="#06081a" stroke="#d4a248" strokeWidth="1" />
-    <circle cx="140" cy="142" r="4" fill="#06081a" stroke="#d4a248" strokeWidth="1" />
-    {/* Pen */}
-    <g transform="rotate(35 184 96)">
-      <rect x="170" y="86" width="40" height="10" rx="2" fill="#ff2d8a" />
-      <polygon points="210,86 220,91 210,96" fill="#1a1340" />
-      <rect x="170" y="86" width="6" height="10" fill="#7a1f3a" />
+    {/* Clip */}
+    <rect
+      x="104"
+      y="22"
+      width="32"
+      height="18"
+      rx="3"
+      fill="none"
+      stroke={STROKE}
+      strokeWidth="1.4"
+    />
+    {/* Form lines */}
+    <line x1="86" y1="58" x2="154" y2="58" stroke={STROKE} strokeWidth="1.4" strokeLinecap="round" />
+    <line x1="86" y1="70" x2="138" y2="70" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    <line x1="86" y1="80" x2="146" y2="80" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    <line x1="86" y1="90" x2="130" y2="90" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    {/* Vehicle outline schematic */}
+    <g transform="translate(86 104)">
+      <path
+        d="M0 22 Q4 12 16 10 L26 8 Q40 4 56 6 Q64 8 68 14 L68 22 Z"
+        fill="none"
+        stroke={STROKE}
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+      />
+      <line x1="0" y1="22" x2="68" y2="22" stroke={STROKE_FAINT} strokeWidth="1" />
+      <circle cx="14" cy="22" r="3.4" fill="none" stroke={STROKE} strokeWidth="1.2" />
+      <circle cx="54" cy="22" r="3.4" fill="none" stroke={STROKE} strokeWidth="1.2" />
+    </g>
+    {/* Pen — small magenta accent */}
+    <g transform="rotate(38 184 100)">
+      <line x1="174" y1="100" x2="206" y2="100" stroke={STROKE} strokeWidth="1.4" strokeLinecap="round" />
+      <line x1="206" y1="100" x2="212" y2="100" stroke={ACCENT} strokeWidth="2" strokeLinecap="round" />
+      <line x1="172" y1="100" x2="176" y2="100" stroke={STROKE} strokeWidth="2" strokeLinecap="round" />
     </g>
   </svg>
 );
@@ -81,78 +122,94 @@ export const StepReview = ({ className }: StepIconProps) => (
   <svg {...baseProps} className={cn(baseProps.className, className)} aria-hidden>
     {/* Document */}
     <path
-      d="M70 30 L150 30 L180 60 L180 150 Q180 156 174 156 L70 156 Q64 156 64 150 L64 36 Q64 30 70 30 Z"
-      fill="#faf7f2"
-      stroke="#d4a248"
-      strokeWidth="2"
+      d="M76 28 H148 L180 60 V152 H76 Z"
+      fill="none"
+      stroke={STROKE}
+      strokeWidth="1.4"
       strokeLinejoin="round"
     />
-    <path d="M150 30 L150 60 L180 60" fill="#ece2c9" stroke="#d4a248" strokeWidth="2" />
-    {/* Scales of justice */}
-    <g transform="translate(120 80)">
-      <line x1="0" y1="-12" x2="0" y2="40" stroke="#1a1340" strokeWidth="2.4" />
-      <circle cx="0" cy="-12" r="3" fill="#d4a248" />
-      <line x1="-22" y1="-4" x2="22" y2="-4" stroke="#1a1340" strokeWidth="2" />
-      <path d="M-26 -4 L-30 12 L-14 12 Z" fill="#ff2d8a" />
-      <path d="M26 -4 L30 12 L14 12 Z" fill="#ff2d8a" />
-      <ellipse cx="0" cy="40" rx="14" ry="3" fill="#1a1340" />
+    <path d="M148 28 V60 H180" fill="none" stroke={STROKE} strokeWidth="1.4" strokeLinejoin="round" />
+    {/* Document lines */}
+    <line x1="86" y1="80" x2="170" y2="80" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    <line x1="86" y1="92" x2="160" y2="92" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    <line x1="86" y1="104" x2="166" y2="104" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    <line x1="86" y1="116" x2="156" y2="116" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+    <line x1="86" y1="128" x2="170" y2="128" stroke={STROKE_FAINT} strokeWidth="1" strokeLinecap="round" />
+
+    {/* Magnifying glass — magenta accent for review focus */}
+    <g transform="translate(86 96)">
+      <circle cx="0" cy="0" r="22" fill="none" stroke={ACCENT} strokeWidth="1.6" />
+      <circle cx="0" cy="0" r="22" fill="rgba(255,90,163,0.05)" />
+      <line x1="16" y1="16" x2="34" y2="34" stroke={ACCENT} strokeWidth="2.2" strokeLinecap="round" />
     </g>
-    {/* Magnifying glass */}
-    <circle cx="78" cy="108" r="22" fill="rgba(255,45,138,0.08)" stroke="#ff2d8a" strokeWidth="3" />
-    <line x1="93" y1="123" x2="112" y2="142" stroke="#ff2d8a" strokeWidth="5" strokeLinecap="round" />
-    {/* Checkmark badge */}
-    <circle cx="170" cy="140" r="14" fill="#22a06b" stroke="#fff3da" strokeWidth="2" />
-    <path
-      d="M164 140 L168 144 L176 136"
-      stroke="#fff"
-      strokeWidth="2.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
   </svg>
 );
 
 export const StepEnvelope = ({ className }: StepIconProps) => (
   <svg {...baseProps} className={cn(baseProps.className, className)} aria-hidden>
-    <defs>
-      <linearGradient id="env-grad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#2a1758" />
-        <stop offset="100%" stopColor="#06081a" />
-      </linearGradient>
-    </defs>
-    {/* Envelope back */}
-    <rect x="48" y="58" width="144" height="100" rx="6" fill="url(#env-grad)" stroke="#d4a248" strokeWidth="2" />
-    {/* Cash bills sticking out */}
-    <g transform="translate(78 30)">
-      <rect x="0" y="0" width="84" height="50" rx="4" fill="#22a06b" stroke="#15693f" strokeWidth="1.5" />
-      <circle cx="42" cy="25" r="14" fill="#fff3da" opacity="0.85" />
-      <text x="42" y="30" textAnchor="middle" fontFamily="Georgia" fontSize="14" fill="#15693f" fontWeight="700">
-        £
-      </text>
-      <rect x="6" y="6" width="14" height="10" rx="1" fill="#fff3da" opacity="0.5" />
-      <rect x="64" y="34" width="14" height="10" rx="1" fill="#fff3da" opacity="0.5" />
-    </g>
-    <g transform="translate(58 36) rotate(-12)">
-      <rect x="0" y="0" width="78" height="46" rx="4" fill="#1f8e5d" stroke="#15693f" strokeWidth="1.5" opacity="0.92" />
-      <circle cx="39" cy="23" r="12" fill="#fff3da" opacity="0.8" />
-      <text x="39" y="28" textAnchor="middle" fontFamily="Georgia" fontSize="13" fill="#15693f" fontWeight="700">
-        £
-      </text>
-    </g>
-    {/* Envelope flap front */}
-    <path d="M48 58 L120 110 L192 58 Z" fill="#1a1340" opacity="0.5" />
+    {/* Envelope */}
+    <rect
+      x="48"
+      y="54"
+      width="144"
+      height="100"
+      rx="3"
+      fill="none"
+      stroke={STROKE}
+      strokeWidth="1.4"
+    />
+    {/* Open flap geometry */}
     <path
-      d="M48 158 L120 100 L192 158 Z"
-      fill="url(#env-grad)"
-      stroke="#d4a248"
-      strokeWidth="2"
+      d="M48 54 L120 110 L192 54"
+      fill="none"
+      stroke={STROKE_FAINT}
+      strokeWidth="1"
       strokeLinejoin="round"
     />
-    {/* Sparkle */}
     <path
-      d="M30 140 L33 148 L41 151 L33 154 L30 162 L27 154 L19 151 L27 148 Z"
-      fill="#f3cf91"
-      className="twinkle"
+      d="M48 154 L96 100"
+      stroke={STROKE_FAINT}
+      strokeWidth="1"
+      strokeLinecap="round"
     />
+    <path
+      d="M192 154 L144 100"
+      stroke={STROKE_FAINT}
+      strokeWidth="1"
+      strokeLinecap="round"
+    />
+
+    {/* Folded letter peeking out */}
+    <g transform="translate(82 32)">
+      <rect
+        x="0"
+        y="0"
+        width="76"
+        height="58"
+        rx="2"
+        fill="none"
+        stroke={STROKE}
+        strokeWidth="1.3"
+      />
+      <line x1="10" y1="14" x2="66" y2="14" stroke={STROKE_FAINT} strokeWidth="0.9" strokeLinecap="round" />
+      <line x1="10" y1="22" x2="56" y2="22" stroke={STROKE_FAINT} strokeWidth="0.9" strokeLinecap="round" />
+      <line x1="10" y1="30" x2="60" y2="30" stroke={STROKE_FAINT} strokeWidth="0.9" strokeLinecap="round" />
+      {/* Settlement glyph — restrained pound symbol */}
+      <text
+        x="38"
+        y="50"
+        textAnchor="middle"
+        fontFamily="Fraunces, Georgia, serif"
+        fontSize="18"
+        fontStyle="italic"
+        fill={ACCENT}
+      >
+        £
+      </text>
+    </g>
+
+    {/* Wax-seal style mark on envelope — small magenta dot */}
+    <circle cx="120" cy="124" r="6" fill="none" stroke={ACCENT} strokeWidth="1.4" />
+    <circle cx="120" cy="124" r="2" fill={ACCENT} />
   </svg>
 );

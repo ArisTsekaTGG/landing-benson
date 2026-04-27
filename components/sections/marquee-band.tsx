@@ -107,19 +107,16 @@ export const MarqueeBand = ({
   );
 };
 
+/* Typographic fleuron — replaces the eight-point star with a quieter editorial
+ * separator. Two opposing serifs and a small diamond, drawn in champagne gold. */
 const Ornament = () => (
-  <svg viewBox="0 0 64 64" className="h-9 w-9 shrink-0 text-magenta-400" fill="none" aria-hidden>
-    <defs>
-      <linearGradient id="orn" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#ff5aa3" />
-        <stop offset="100%" stopColor="#e8b86f" />
-      </linearGradient>
-    </defs>
-    <path
-      d="M32 6 L36 28 L58 32 L36 36 L32 58 L28 36 L6 32 L28 28 Z"
-      fill="url(#orn)"
-      opacity="0.95"
-    />
-    <circle cx="32" cy="32" r="3" fill="#06081a" />
+  <svg viewBox="0 0 64 64" className="h-7 w-7 shrink-0 text-gold-400" fill="none" aria-hidden>
+    <g stroke="#d4a248" strokeWidth="1.4" strokeLinecap="round">
+      <path d="M14 32 L26 32" />
+      <path d="M38 32 L50 32" />
+      <path d="M22 26 Q26 32 22 38" fill="none" />
+      <path d="M42 26 Q38 32 42 38" fill="none" />
+    </g>
+    <path d="M32 26 L38 32 L32 38 L26 32 Z" fill="#d4a248" opacity="0.9" />
   </svg>
 );

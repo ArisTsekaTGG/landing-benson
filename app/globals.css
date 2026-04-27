@@ -140,24 +140,6 @@ body {
     radial-gradient(circle at 50% 100%, rgba(212, 162, 72, 0.25), transparent 70%);
 }
 
-/* Marquee bulb chase — opacity-only for cheap compositor-friendly animation */
-@keyframes bulb-chase {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
-}
-
-.bulb {
-  animation: bulb-chase 1.8s ease-in-out infinite;
-  /* Filter applied statically, not animated — keeps the glow without per-frame paint */
-  filter: drop-shadow(0 0 4px var(--gold-300)) drop-shadow(0 0 10px var(--gold-400));
-  will-change: opacity;
-}
-
 /* Subtle float for hero figures — small amplitude, GPU-only transform */
 @keyframes gentle-float {
   0%,
