@@ -1,44 +1,41 @@
 import { BrandMark } from "@/components/decor/brand-mark";
 
 const COL_CLAIMS = [
-  { label: "Mis-sold motor finance", href: "/mis-sold-motor-finance" },
-  { label: "Unaffordable lending claims", href: "/unaffordable-lending-claims" },
   { label: "How it works", href: "/#how-it-works" },
-  { label: "Cases we recover", href: "/#claims" },
+  { label: "Eligibility", href: "/#hero" },
+  { label: "Car finance claims", href: "/mis-sold-motor-finance" },
+  { label: "No win, no fee", href: "/#hero" },
   { label: "FAQs", href: "/#faqs" },
 ];
 
 const COL_FIRM = [
-  { label: "About us", href: "/about" },
-  { label: "Coby Benson", href: "/about#coby" },
-  { label: "David Goldstein", href: "/about#david" },
-  { label: "Contact", href: "#contact" },
+  { label: "Why Benson Goldstein", href: "/about" },
+  { label: "Our legal team", href: "/about" },
+  { label: "Success stories", href: "/#claims" },
+  { label: "News & updates", href: "/about" },
 ];
 
 const COL_HELP = [
-  { label: "Privacy policy", href: "/privacy-policy" },
-  { label: "Complaints procedure", href: "/complaints-procedure" },
+  { label: "Contact", href: "#contact" },
   { label: "Terms of use", href: "/privacy-policy" },
-  { label: "info@bensongoldstein.com", href: "mailto:info@bensongoldstein.com" },
+  { label: "Privacy policy", href: "/privacy-policy" },
+  { label: "Complaints", href: "/complaints-procedure" },
 ];
 
 export const SiteFooter = () => {
   return (
     <footer
       id="contact"
-      className="relative isolate overflow-hidden bg-[#06081a] pt-20"
+      className="relative isolate overflow-hidden bg-blue-900 pt-20 text-cream-50"
     >
-      {/* Top hairline */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
-
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid grid-cols-1 gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <BrandMark />
-            <p className="mt-5 max-w-xs text-[0.92rem] leading-relaxed text-foreground/65">
+            <BrandMark variant="light" />
+            <p className="mt-5 max-w-xs text-[0.92rem] leading-relaxed text-cream-50/65">
               Benson Goldstein is a regulated UK law firm specialising in mis-sold car finance
-              recovery. Our service is run with the discretion of a private chambers and the speed
-              of a service built for you.
+              recovery. Specialist solicitors with years of experience in financial mis-selling
+              claims.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {[
@@ -51,7 +48,7 @@ export const SiteFooter = () => {
                   key={s.label}
                   href="#"
                   aria-label={s.label}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-foreground/65 transition-all hover:border-magenta-400/50 hover:bg-magenta-500/10 hover:text-foreground"
+                  className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-white/5 text-cream-50/70 transition-all hover:border-blue-300 hover:bg-white/10 hover:text-cream-50"
                 >
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden>
                     <path d={s.path} />
@@ -62,13 +59,13 @@ export const SiteFooter = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="text-[0.82rem] font-medium uppercase tracking-[0.18em] text-gold-300">
+            <h4 className="text-[0.82rem] font-semibold tracking-tight text-cream-50">
               Claim with confidence
             </h4>
-            <ul className="mt-4 flex flex-col gap-2 text-[0.92rem] text-foreground/72">
+            <ul className="mt-4 flex flex-col gap-2 text-[0.92rem] text-cream-50/72">
               {COL_CLAIMS.map((l) => (
                 <li key={l.label}>
-                  <a className="transition-colors hover:text-foreground" href={l.href}>
+                  <a className="transition-colors hover:text-cream-50" href={l.href}>
                     {l.label}
                   </a>
                 </li>
@@ -76,13 +73,13 @@ export const SiteFooter = () => {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <h4 className="text-[0.82rem] font-medium uppercase tracking-[0.18em] text-gold-300">
+            <h4 className="text-[0.82rem] font-semibold tracking-tight text-cream-50">
               About us
             </h4>
-            <ul className="mt-4 flex flex-col gap-2 text-[0.92rem] text-foreground/72">
+            <ul className="mt-4 flex flex-col gap-2 text-[0.92rem] text-cream-50/72">
               {COL_FIRM.map((l) => (
                 <li key={l.label}>
-                  <a className="transition-colors hover:text-foreground" href={l.href}>
+                  <a className="transition-colors hover:text-cream-50" href={l.href}>
                     {l.label}
                   </a>
                 </li>
@@ -90,13 +87,13 @@ export const SiteFooter = () => {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <h4 className="text-[0.82rem] font-medium uppercase tracking-[0.18em] text-gold-300">
-              Help & support
+            <h4 className="text-[0.82rem] font-semibold tracking-tight text-cream-50">
+              Help &amp; support
             </h4>
-            <ul className="mt-4 flex flex-col gap-2 text-[0.92rem] text-foreground/72">
+            <ul className="mt-4 flex flex-col gap-2 text-[0.92rem] text-cream-50/72">
               {COL_HELP.map((l) => (
                 <li key={l.label}>
-                  <a className="transition-colors hover:text-foreground" href={l.href}>
+                  <a className="transition-colors hover:text-cream-50" href={l.href}>
                     {l.label}
                   </a>
                 </li>
@@ -106,28 +103,28 @@ export const SiteFooter = () => {
 
           {/* SRA badge */}
           <div className="lg:col-span-2">
-            <div className="rounded-2xl border border-gold-400/25 bg-gradient-to-br from-[#0d1234] to-[#0a0e27] p-4">
+            <div className="rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur">
               <div className="flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-md bg-gradient-to-br from-cream-50 to-cream-200 font-display text-[0.78rem] font-bold tracking-wider text-ink-900">
+                <div className="grid h-10 w-10 place-items-center rounded-md bg-cream-50 font-display text-[0.78rem] font-bold tracking-wider text-blue-900">
                   SRA
                 </div>
-                <div className="text-[0.78rem] leading-snug text-foreground/72">
+                <div className="text-[0.78rem] leading-snug text-cream-50/72">
                   Regulated by the
                   <br />
-                  <span className="text-foreground/90">Solicitors Regulation Authority</span>
+                  <span className="text-cream-50/90">Solicitors Regulation Authority</span>
                 </div>
               </div>
-              <div className="mt-3 text-[0.74rem] text-foreground/55">SRA No. 8003245</div>
+              <div className="mt-3 text-[0.74rem] text-cream-50/55">SRA No. 8003245</div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/[0.06] py-7 text-[0.78rem] leading-relaxed text-foreground/55 sm:flex sm:items-start sm:justify-between sm:gap-8">
+        <div className="border-t border-white/10 py-7 text-[0.78rem] leading-relaxed text-cream-50/55 sm:flex sm:items-start sm:justify-between sm:gap-8">
           <p className="max-w-3xl">
             Benson Goldstein is a trading name of Benson Goldstein Ltd, a company registered in
             England &amp; Wales (No. 14417365). Registered office: 3rd Floor, 86–90 Paul Street,
-            London EC2A 4NE. Authorised and regulated by the Solicitors Regulation Authority (SRA
-            No. 8003245). VAT registration GB507539384.
+            London EC2A 4NE. Authorised and regulated by the Solicitors Regulation Authority
+            (SRA No. 8003245). VAT registration GB507539384. We are solicitors.
           </p>
           <p className="mt-3 sm:mt-0">© {new Date().getFullYear()} Benson Goldstein</p>
         </div>

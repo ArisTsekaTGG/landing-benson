@@ -18,9 +18,9 @@ interface StepIconProps {
  *   - reads like an engraved technical schematic on letterhead
  */
 
-const STROKE = "#d4a248";
-const STROKE_FAINT = "rgba(232,184,111,0.45)";
-const ACCENT = "#ff5aa3";
+const STROKE = "#1f4da6";
+const STROKE_FAINT = "rgba(31,77,166,0.35)";
+const ACCENT = "#2554a0";
 
 export const StepLaptop = ({ className }: StepIconProps) => (
   <svg {...baseProps} className={cn(baseProps.className, className)} aria-hidden>

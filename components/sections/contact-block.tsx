@@ -15,10 +15,9 @@ interface ContactBlockProps {
 export const ContactBlock = ({
   heading = "Need help? Contact us today.",
   intro = "Our experienced representatives will respond promptly, ensuring your queries are addressed effectively.",
-  variant = "dark",
+  variant = "cream",
 }: ContactBlockProps) => {
   const [submitted, setSubmitted] = useState(false);
-
   const isDark = variant === "dark";
 
   return (
@@ -26,7 +25,7 @@ export const ContactBlock = ({
       id="contact-form"
       className={cn(
         "section-cv relative isolate overflow-hidden py-24 sm:py-32",
-        isDark ? "bg-[#06081a] text-foreground" : "bg-cream-50 text-ink-800",
+        isDark ? "bg-blue-900 text-cream-50" : "bg-white text-blue-900",
       )}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -37,13 +36,11 @@ export const ContactBlock = ({
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: EASE_OUT }}
           >
-            <span className="rule" style={!isDark ? { color: "#7a5818" } : undefined}>
-              Contact
-            </span>
+            <span className="rule">Contact</span>
             <h2
               className={cn(
-                "mt-4 font-display text-[clamp(2rem,4.4vw,3.4rem)] font-medium leading-[1.04] tracking-[-0.02em] text-balance",
-                !isDark && "text-ink-900",
+                "mt-4 font-display text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.04] tracking-[-0.02em] text-balance",
+                isDark ? "text-cream-50" : "text-blue-900",
               )}
             >
               {heading}
@@ -51,7 +48,7 @@ export const ContactBlock = ({
             <p
               className={cn(
                 "mt-4 max-w-md text-[1rem] leading-relaxed",
-                isDark ? "text-foreground/72" : "text-ink-700",
+                isDark ? "text-cream-50/75" : "text-blue-900/70",
               )}
             >
               {intro}
@@ -59,27 +56,42 @@ export const ContactBlock = ({
 
             <dl className="mt-8 space-y-4 text-[0.94rem]">
               <div className="flex gap-4">
-                <dt className="w-24 shrink-0 text-[0.74rem] uppercase tracking-[0.18em] text-gold-300">
+                <dt
+                  className={cn(
+                    "w-24 shrink-0 text-[0.74rem] uppercase tracking-[0.18em]",
+                    isDark ? "text-blue-300" : "text-blue-700",
+                  )}
+                >
                   Address
                 </dt>
-                <dd className={cn(isDark ? "text-foreground/85" : "text-ink-800")}>
+                <dd className={isDark ? "text-cream-50/85" : "text-blue-900/85"}>
                   PO Box 79176
                   <br />
                   London NW4 9NH
                 </dd>
               </div>
               <div className="flex gap-4">
-                <dt className="w-24 shrink-0 text-[0.74rem] uppercase tracking-[0.18em] text-gold-300">
+                <dt
+                  className={cn(
+                    "w-24 shrink-0 text-[0.74rem] uppercase tracking-[0.18em]",
+                    isDark ? "text-blue-300" : "text-blue-700",
+                  )}
+                >
                   Office
                 </dt>
-                <dd className={cn(isDark ? "text-foreground/85" : "text-ink-800")}>
+                <dd className={isDark ? "text-cream-50/85" : "text-blue-900/85"}>
                   3rd Floor, 86–90 Paul Street
                   <br />
                   London EC2A 4NE
                 </dd>
               </div>
               <div className="flex gap-4">
-                <dt className="w-24 shrink-0 text-[0.74rem] uppercase tracking-[0.18em] text-gold-300">
+                <dt
+                  className={cn(
+                    "w-24 shrink-0 text-[0.74rem] uppercase tracking-[0.18em]",
+                    isDark ? "text-blue-300" : "text-blue-700",
+                  )}
+                >
                   Email
                 </dt>
                 <dd>
@@ -87,7 +99,7 @@ export const ContactBlock = ({
                     href="mailto:info@bensongoldstein.com"
                     className={cn(
                       "underline-offset-4 hover:underline",
-                      isDark ? "text-magenta-300" : "text-magenta-500",
+                      isDark ? "text-blue-200" : "text-blue-700",
                     )}
                   >
                     info@bensongoldstein.com
@@ -105,27 +117,30 @@ export const ContactBlock = ({
             className={cn(
               "rounded-[24px] p-6 sm:p-8",
               isDark
-                ? "border border-gold-400/25 bg-[#0d1234]"
-                : "border border-gold-500/30 bg-white",
+                ? "border border-white/15 bg-white/5 backdrop-blur"
+                : "border border-blue-100 bg-white",
             )}
           >
             {submitted ? (
               <div className="flex flex-col items-start gap-3 py-2">
-                <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-magenta-500 to-magenta-400 text-white">
+                <div className="grid h-12 w-12 place-items-center rounded-full bg-blue-700 text-white">
                   <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden>
                     <path d="M5 12.5 L10 17.5 L19 7.5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <h3 className={cn("font-display text-xl", !isDark && "text-ink-900")}>
+                <h3 className={cn("font-display text-xl", isDark ? "text-cream-50" : "text-blue-900")}>
                   Thank you — we&apos;ve received your message.
                 </h3>
-                <p className={cn("text-[0.95rem]", isDark ? "text-foreground/72" : "text-ink-700")}>
+                <p className={cn("text-[0.95rem]", isDark ? "text-cream-50/75" : "text-blue-900/75")}>
                   A member of our team will be in touch within one working day.
                 </p>
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
-                  className="mt-2 text-[0.84rem] font-medium text-magenta-500 underline-offset-4 hover:underline"
+                  className={cn(
+                    "mt-2 text-[0.84rem] font-medium underline-offset-4 hover:underline",
+                    isDark ? "text-blue-200" : "text-blue-700",
+                  )}
                 >
                   Send another message
                 </button>
@@ -146,7 +161,7 @@ export const ContactBlock = ({
                 <Field id="msg" label="Message" placeholder="How can we help?" textarea dark={isDark} />
                 <button
                   type="submit"
-                  className="btn-magenta group mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full px-6 py-3 text-[0.96rem] font-semibold"
+                  className="btn-blue group mt-1 inline-flex items-center justify-center gap-2 self-start rounded-full px-6 py-3 text-[0.96rem] font-semibold"
                 >
                   Send message
                   <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden>
@@ -175,15 +190,15 @@ const Field = ({ id, label, placeholder, type = "text", textarea, dark }: FieldP
   const inputCls = cn(
     "w-full rounded-xl border px-4 py-3 text-[0.95rem] outline-none transition-all",
     dark
-      ? "border-white/12 bg-white/[0.04] text-foreground placeholder:text-foreground/40 focus:border-magenta-400 focus:bg-white/[0.08] focus:ring-4 focus:ring-magenta-500/15"
-      : "border-ink-700/15 bg-white text-ink-900 placeholder:text-ink-700/40 focus:border-magenta-500 focus:ring-4 focus:ring-magenta-500/15",
+      ? "border-white/15 bg-white/8 text-cream-50 placeholder:text-cream-50/40 focus:border-blue-300 focus:bg-white/12 focus:ring-4 focus:ring-blue-300/20"
+      : "border-blue-100 bg-white text-blue-900 placeholder:text-blue-900/35 focus:border-blue-700 focus:ring-4 focus:ring-blue-100",
   );
   return (
     <label htmlFor={id} className="block">
       <span
         className={cn(
           "mb-1.5 block text-[0.78rem] font-medium",
-          dark ? "text-foreground/80" : "text-ink-800",
+          dark ? "text-cream-50/85" : "text-blue-900/85",
         )}
       >
         {label}

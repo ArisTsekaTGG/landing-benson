@@ -54,15 +54,14 @@ export const Hero = () => {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative isolate overflow-hidden bg-[#06081a] pb-32 pt-32 sm:pt-36 lg:pt-44"
+      className="relative isolate overflow-hidden bg-blue-900 pb-32 pt-32 sm:pt-36 lg:pt-44"
     >
-      {/* Background atmosphere */}
-      <div className="absolute inset-0 -z-30 bg-gradient-to-b from-[#0a0e27] via-[#0e0c30] to-[#06081a]" />
-      <div className="spotlight absolute inset-0 -z-20" />
-      <motion.div style={{ y: beamsY }} className="absolute inset-0 -z-10">
-        <SpotlightBeams className="opacity-80" />
+      {/* Background atmosphere — solid navy with a subtle inner radial */}
+      <div className="absolute inset-0 -z-30 bg-blue-900" />
+      <div className="spotlight absolute inset-0 -z-20 opacity-90" />
+      <motion.div style={{ y: beamsY }} className="absolute inset-0 -z-10 opacity-70">
+        <SpotlightBeams className="opacity-50" />
       </motion.div>
-      <div className="grain pointer-events-none absolute inset-0 -z-10 opacity-30" />
 
       {/* Distant chambers seals — drift up as you scroll, much quieter than marquee stars */}
       <motion.div
@@ -107,11 +106,11 @@ export const Hero = () => {
               initial="hidden"
               animate="visible"
               custom={0.1}
-              className="inline-flex items-center gap-2 rounded-full border border-magenta-500/40 bg-magenta-500/10 px-3.5 py-1.5 text-[0.74rem] font-medium uppercase tracking-[0.18em] text-magenta-300"
+              className="glass-dark inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[0.74rem] font-medium uppercase tracking-[0.18em] text-cream-50/85"
             >
               <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inset-0 animate-ping rounded-full bg-magenta-400 opacity-75" />
-                <span className="relative h-1.5 w-1.5 rounded-full bg-magenta-400" />
+                <span className="absolute inset-0 animate-ping rounded-full bg-blue-300 opacity-75" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-blue-300" />
               </span>
               Thousands have already claimed
             </motion.div>
@@ -121,38 +120,13 @@ export const Hero = () => {
               initial="hidden"
               animate="visible"
               custom={0.2}
-              className="mt-6 font-display text-[clamp(2.6rem,6.4vw,5.4rem)] font-medium leading-[0.96] tracking-[-0.02em] text-balance"
+              className="mt-6 font-display text-[clamp(2.6rem,6.4vw,5.4rem)] font-semibold leading-[0.96] tracking-[-0.02em] text-cream-50 text-balance"
             >
-              <span className="block">Mis-sold</span>
-              <span className="block">car finance?</span>
-              <span className="mt-2 block text-foreground/70">
-                Make your claim in{" "}
-                <span className="relative inline-block">
-                  <span className="font-italic text-magenta-400">60 seconds</span>
-                  <svg
-                    viewBox="0 0 220 18"
-                    className="absolute -bottom-3 left-0 right-0 w-full"
-                    fill="none"
-                    aria-hidden
-                  >
-                    <motion.path
-                      d="M2 12 Q60 2 110 8 T 218 6"
-                      stroke="url(#pen)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      initial={{ pathLength: 0, opacity: 0 }}
-                      animate={{ pathLength: 1, opacity: 1 }}
-                      transition={{ duration: 1.4, ease: [0.65, 0, 0.35, 1], delay: 0.9 }}
-                    />
-                    <defs>
-                      <linearGradient id="pen" x1="0" y1="0" x2="1" y2="0">
-                        <stop offset="0%" stopColor="#ff2d8a" />
-                        <stop offset="100%" stopColor="#e8b86f" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-                <span className="text-magenta-400">.</span>
+              <span className="block">Mis-sold car finance?</span>
+              <span className="mt-2 block">Check your claim in</span>
+              <span className="block">
+                <span className="font-italic text-blue-300">60 seconds</span>
+                <span className="text-blue-300">.</span>
               </span>
             </motion.h1>
 
@@ -161,10 +135,10 @@ export const Hero = () => {
               initial="hidden"
               animate="visible"
               custom={0.4}
-              className="mt-7 max-w-md text-[1.05rem] leading-relaxed text-foreground/72"
+              className="mt-7 max-w-md text-[1.05rem] leading-relaxed text-cream-50/75"
             >
-              A regulated team of senior counsel reviewing mis-sold finance agreements with the
-              quiet rigour of a private chambers — and the speed of a service built for you.
+              Simple guidance. A fast eligibility check. Expert support from legal professionals
+              who know how to win.
             </motion.p>
 
             <motion.div
@@ -176,7 +150,7 @@ export const Hero = () => {
             >
               <a
                 href="#hero"
-                className="btn-magenta group inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-[0.96rem] font-semibold transition-transform"
+                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[0.96rem] font-semibold text-blue-900 shadow-[0_10px_24px_-10px_rgba(0,0,0,0.5)] transition-transform hover:-translate-y-0.5"
               >
                 Check if I&apos;m eligible
                 <svg viewBox="0 0 16 16" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden>
@@ -185,10 +159,10 @@ export const Hero = () => {
               </a>
               <a
                 href="#how-it-works"
-                className="btn-ghost group inline-flex items-center gap-3 rounded-full px-5 py-3.5 text-[0.94rem] font-medium text-foreground/90 transition-colors"
+                className="group inline-flex items-center gap-3 rounded-full border border-white/25 bg-transparent px-5 py-3.5 text-[0.94rem] font-medium text-cream-50 transition-colors hover:bg-white/10"
               >
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-foreground/10 transition-colors group-hover:bg-magenta-500/30">
-                  <svg viewBox="0 0 16 16" className="h-3 w-3" fill="currentColor" aria-hidden>
+                <span className="grid h-6 w-6 place-items-center rounded-full bg-white/15 transition-colors group-hover:bg-white/25">
+                  <svg viewBox="0 0 16 16" className="h-2.5 w-2.5" fill="currentColor" aria-hidden>
                     <path d="M4 3 L13 8 L4 13 Z" />
                   </svg>
                 </span>
@@ -203,7 +177,7 @@ export const Hero = () => {
               custom={0.65}
               className="mt-8"
             >
-              <Trustpilot rating="4.8" count="18,000" />
+              <Trustpilot rating="4.7" count="20,123" />
             </motion.div>
           </div>
 
@@ -243,7 +217,7 @@ export const Hero = () => {
       </motion.div>
 
       {/* Bottom hairline floor */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-blue-400/30" />
     </section>
   );
 };

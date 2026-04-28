@@ -1,34 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  /* Ink palette */
-  --ink-900: #06081a;
-  --ink-800: #0a0e27;
-  --ink-700: #131a3d;
-  --ink-600: #1c2554;
-  --aubergine: #1a1340;
-  --plum: #2a1758;
+  /* Ink palette — used for hero photo backdrop, CTA panel, footer */
+  --ink-900: #06091e;
+  --ink-800: #0a1230;
+  --ink-700: #142250;
+  --ink-600: #1c2e6e;
+  --aubergine: #0f1a3d;
+  --plum: #14275a;
 
-  /* Accent — magenta family */
-  --magenta-500: #ff2d8a;
-  --magenta-400: #ff5aa3;
-  --magenta-300: #ff85bc;
-  --magenta-100: #ffd1e3;
+  /* Royal blue — primary accent (replaces magenta everywhere) */
+  --blue-50: #eef3fa;
+  --blue-100: #d6e2f1;
+  --blue-200: #b0c8e8;
+  --blue-300: #7ea5dc;
+  --blue-400: #5184d0;
+  --blue-500: #2e63bf;
+  --blue-600: #1f4da6;
+  --blue-700: #163d85;
+  --blue-800: #0f2e63;
+  --blue-900: #0a2456;
 
-  /* Champagne gold (marquee) */
-  --gold-500: #d4a248;
-  --gold-400: #e8b86f;
-  --gold-300: #f3cf91;
-  --gold-100: #fff3da;
+  /* Legacy "magenta-*" tokens are retained for backwards compatibility but
+   * point at the blue family — old utility classes (`text-magenta-400`)
+   * resolve to blue without a project-wide rename. */
+  --magenta-500: var(--blue-700);
+  --magenta-400: var(--blue-600);
+  --magenta-300: var(--blue-500);
+  --magenta-100: var(--blue-100);
 
-  /* Warm parchment */
-  --cream-50: #faf7f2;
-  --cream-100: #f5efe0;
-  --cream-200: #ece2c9;
+  /* Gold is now a near-invisible hairline tone — kept for very subtle rules. */
+  --gold-500: #2e63bf;
+  --gold-400: #5184d0;
+  --gold-300: #7ea5dc;
+  --gold-100: #d6e2f1;
 
-  /* Type */
-  --foreground: #f5efe0;
-  --background: var(--ink-800);
+  /* Warm parchment (kept) */
+  --cream-50: #faf8f3;
+  --cream-100: #f3ede0;
+  --cream-200: #e7dec5;
+
+  /* Type defaults — light theme dominant */
+  --foreground: #0f2e63;
+  --background: #ffffff;
 }
 
 @theme inline {
@@ -41,6 +55,17 @@
   --color-ink-600: var(--ink-600);
   --color-aubergine: var(--aubergine);
   --color-plum: var(--plum);
+
+  --color-blue-50: var(--blue-50);
+  --color-blue-100: var(--blue-100);
+  --color-blue-200: var(--blue-200);
+  --color-blue-300: var(--blue-300);
+  --color-blue-400: var(--blue-400);
+  --color-blue-500: var(--blue-500);
+  --color-blue-600: var(--blue-600);
+  --color-blue-700: var(--blue-700);
+  --color-blue-800: var(--blue-800);
+  --color-blue-900: var(--blue-900);
 
   --color-magenta-500: var(--magenta-500);
   --color-magenta-400: var(--magenta-400);
@@ -67,11 +92,10 @@
 }
 
 html {
-  background: var(--ink-900);
+  background: #ffffff;
   scroll-behavior: smooth;
 }
 
-/* Native smooth-scroll snap-back for hashes, but only when JS isn't doing it. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -86,8 +110,8 @@ body {
 }
 
 ::selection {
-  background: var(--magenta-500);
-  color: var(--cream-50);
+  background: var(--blue-600);
+  color: #ffffff;
 }
 
 /* ----- decorative utilities ----- */
@@ -111,7 +135,7 @@ body {
   text-wrap: pretty;
 }
 
-/* Grain overlay — paint-contained so it doesn't trigger doc-wide repaints */
+/* Subtle paper grain — much lighter on cream/white surfaces */
 .grain {
   contain: paint;
 }
@@ -121,26 +145,25 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  opacity: 0.18;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity: 0.5;
   z-index: 1;
 }
 
-/* Spotlight glow for hero */
+/* Hero spotlight glow — now blue-toned for the dark photographic backdrop */
 .spotlight {
   background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255, 45, 138, 0.18), transparent 60%),
-    radial-gradient(ellipse 80% 50% at 80% 30%, rgba(212, 162, 72, 0.12), transparent 60%),
-    radial-gradient(ellipse 60% 60% at 20% 70%, rgba(42, 23, 88, 0.6), transparent 60%);
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(46, 99, 191, 0.22), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 80% 30%, rgba(46, 99, 191, 0.12), transparent 60%),
+    radial-gradient(ellipse 60% 60% at 20% 70%, rgba(15, 46, 99, 0.6), transparent 60%);
 }
 
 .stage-glow {
   background:
-    radial-gradient(circle at 50% 100%, rgba(255, 45, 138, 0.35), transparent 55%),
-    radial-gradient(circle at 50% 100%, rgba(212, 162, 72, 0.25), transparent 70%);
+    radial-gradient(circle at 50% 100%, rgba(46, 99, 191, 0.3), transparent 55%),
+    radial-gradient(circle at 50% 100%, rgba(81, 132, 208, 0.18), transparent 70%);
 }
 
-/* Subtle float for hero figures — small amplitude, GPU-only transform */
 @keyframes gentle-float {
   0%,
   100% {
@@ -156,22 +179,14 @@ body {
   will-change: transform;
 }
 
-/* Skip layout/paint of offscreen sections — huge scroll-perf win on long pages */
 .section-cv {
   content-visibility: auto;
   contain-intrinsic-size: 1px 800px;
 }
 
 /* Sliding-over scroll effect.
- *
- * Each `.scrolls-over` block is sticky-pinned to the top of the viewport as
- * the user scrolls past it. The NEXT `.scrolls-over` block, being later in
- * DOM order, paints on top — so as you scroll, every new section literally
- * slides up over the one before. The negative margin-top creates the visible
- * overlap window where both sections are stuck simultaneously and the
- * outgoing section stays visible underneath the rounded top edge of the
- * arriving one.
- */
+ * Sticky-pinned sections that the next slides up over. Shadow tone
+ * tuned for light surfaces — softer than the previous dark version. */
 .scrolls-over {
   position: sticky;
   top: 0;
@@ -179,8 +194,8 @@ body {
   border-top-left-radius: 36px;
   border-top-right-radius: 36px;
   box-shadow:
-    0 -34px 70px -28px rgba(0, 0, 0, 0.65),
-    0 -1px 0 rgba(232, 184, 111, 0.2) inset;
+    0 -28px 60px -32px rgba(15, 46, 99, 0.3),
+    0 -1px 0 rgba(15, 46, 99, 0.08) inset;
   isolation: isolate;
 }
 
@@ -192,7 +207,6 @@ body {
   }
 }
 
-/* Underline draw */
 @keyframes underline-draw {
   to {
     transform: scaleX(1);
@@ -211,14 +225,13 @@ body {
   right: 0;
   bottom: -0.08em;
   height: 0.18em;
-  background: linear-gradient(90deg, var(--magenta-500), var(--gold-400));
+  background: var(--blue-500);
   border-radius: 9999px;
   transform: scaleX(0);
   transform-origin: left;
   animation: underline-draw 1.2s cubic-bezier(0.65, 0, 0.35, 1) 0.6s forwards;
 }
 
-/* Star twinkle */
 @keyframes twinkle {
   0%,
   100% {
@@ -235,7 +248,6 @@ body {
   animation: twinkle 3.5s ease-in-out infinite;
 }
 
-/* Marquee horizontal scroll */
 @keyframes scroll-x {
   to {
     transform: translateX(-50%);
@@ -246,25 +258,26 @@ body {
   animation: scroll-x 40s linear infinite;
 }
 
-/* Custom scroll-bar */
+/* Light-theme scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
-  background: var(--ink-900);
+  background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--ink-600);
+  background: var(--blue-200);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--magenta-500);
+  background: var(--blue-500);
 }
 
-/* Fancy ornamental rule */
+/* Editorial rule — small letterspaced caps with hairline flanks.
+ * Solid blue hairline (no gradients). */
 .rule {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--gold-400);
+  color: var(--blue-700);
   font-family: var(--font-display);
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -276,40 +289,73 @@ body {
   content: "";
   height: 1px;
   width: 2.5rem;
-  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+  background: var(--blue-300);
+  opacity: 0.6;
 }
 
-/* Soft inner glow card */
+/* Card variants — flat surfaces, no gradients. */
 .card-ink {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)) padding-box,
-    linear-gradient(140deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02) 40%) border-box;
-  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .card-cream {
-  background: linear-gradient(180deg, var(--cream-50), var(--cream-100));
-  border: 1px solid rgba(212, 162, 72, 0.25);
+  background: #ffffff;
+  border: 1px solid rgba(15, 46, 99, 0.1);
 }
 
-/* Buttons base */
-.btn-magenta {
-  background: linear-gradient(180deg, var(--magenta-400), var(--magenta-500));
+.card-light {
+  background: #ffffff;
+  border: 1px solid rgba(15, 46, 99, 0.1);
+  box-shadow: 0 1px 0 rgba(15, 46, 99, 0.04);
+}
+
+/* Glassmorphism utilities — frosted surfaces for floating panels. */
+.glass-light {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.4) inset,
-    0 -8px 16px rgba(255, 45, 138, 0.4) inset,
-    0 12px 28px -8px rgba(255, 45, 138, 0.55),
-    0 2px 0 rgba(0, 0, 0, 0.2);
-  color: white;
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 18px 50px -24px rgba(15, 46, 99, 0.25);
 }
 
+.glass-frost {
+  background: rgba(250, 248, 243, 0.55);
+  border: 1px solid rgba(15, 46, 99, 0.1);
+  backdrop-filter: blur(20px) saturate(130%);
+  -webkit-backdrop-filter: blur(20px) saturate(130%);
+}
+
+.glass-dark {
+  background: rgba(10, 36, 86, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+/* Primary blue button — flat solid colour with a subtle inset highlight.
+ * .btn-magenta is retained as an alias for backward compatibility. */
+.btn-blue,
+.btn-magenta {
+  background: var(--blue-700);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 8px 20px -10px rgba(15, 46, 99, 0.5);
+  color: #ffffff;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.btn-blue:hover,
 .btn-magenta:hover {
+  background: var(--blue-600);
   transform: translateY(-1px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.5) inset,
-    0 -10px 18px rgba(255, 45, 138, 0.5) inset,
-    0 18px 36px -8px rgba(255, 45, 138, 0.7),
-    0 2px 0 rgba(0, 0, 0, 0.2);
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 14px 28px -10px rgba(15, 46, 99, 0.6);
 }
 
 .btn-ghost {
@@ -323,14 +369,25 @@ body {
   border-color: rgba(255, 255, 255, 0.32);
 }
 
-/* Stage floor reflective */
-.stage-floor {
-  background:
-    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(255, 45, 138, 0.22), transparent 70%),
-    linear-gradient(180deg, rgba(212, 162, 72, 0.18), transparent 70%);
+/* Light-surface ghost variant */
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--blue-700);
+  color: var(--blue-800);
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Reveal on view */
+.btn-outline:hover {
+  background: var(--blue-700);
+  color: #ffffff;
+}
+
+.stage-floor {
+  background:
+    radial-gradient(ellipse 50% 30% at 50% 0%, rgba(46, 99, 191, 0.22), transparent 70%),
+    linear-gradient(180deg, rgba(81, 132, 208, 0.14), transparent 70%);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);

@@ -32,7 +32,7 @@ export const Faq = () => {
   return (
     <section
       id="faqs"
-      className="section-cv relative isolate overflow-hidden bg-[#06081a] py-28 sm:py-36"
+      className="section-cv relative isolate overflow-hidden bg-cream-50 py-24 sm:py-32"
     >
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <motion.div
@@ -42,13 +42,15 @@ export const Faq = () => {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <span className="rule">Plainly answered</span>
-          <h2 className="mt-5 font-display text-[clamp(2rem,4.2vw,3.1rem)] font-medium leading-[1.04] tracking-[-0.02em] text-balance">
-            Common questions, <span className="font-italic text-magenta-400">answered straight.</span>
+          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-blue-900 text-balance">
+            Frequently asked questions
           </h2>
+          <p className="mt-3 text-[1rem] leading-relaxed text-blue-900/65">
+            Plainly answered, by the people who&apos;ll handle your case.
+          </p>
         </motion.div>
 
-        <div className="mx-auto mt-14 max-w-3xl">
+        <div className="mx-auto mt-12 max-w-3xl">
           <ul className="flex flex-col gap-3">
             {FAQS.map((item, idx) => {
               const isOpen = open === idx;
@@ -60,8 +62,8 @@ export const Faq = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.06 }}
                     className={cn(
-                      "card-ink overflow-hidden rounded-2xl bg-[#0d1234] transition-all duration-500",
-                      isOpen && "shadow-[0_24px_60px_-20px_rgba(255,45,138,0.25)]",
+                      "card-light overflow-hidden rounded-2xl bg-white transition-all duration-500",
+                      isOpen && "shadow-[0_24px_60px_-20px_rgba(15,46,99,0.18)]",
                     )}
                   >
                     <button
@@ -69,16 +71,16 @@ export const Faq = () => {
                       className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6"
                       aria-expanded={isOpen}
                     >
-                      <span className="font-display text-[1.04rem] font-medium leading-snug text-foreground sm:text-[1.12rem]">
+                      <span className="font-display text-[1.02rem] font-medium leading-snug text-blue-900 sm:text-[1.1rem]">
                         {item.q}
                       </span>
                       <span
                         className={cn(
-                          "grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.03] transition-transform duration-500",
-                          isOpen && "rotate-45 border-magenta-400/50 bg-magenta-500/15",
+                          "grid h-9 w-9 shrink-0 place-items-center rounded-full border border-blue-200 bg-white transition-transform duration-500",
+                          isOpen && "rotate-45 border-blue-700 bg-blue-50",
                         )}
                       >
-                        <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-foreground/80" fill="none" aria-hidden>
+                        <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-blue-700" fill="none" aria-hidden>
                           <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                         </svg>
                       </span>
@@ -92,7 +94,7 @@ export const Faq = () => {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                         >
-                          <p className="px-5 pb-6 text-[0.96rem] leading-relaxed text-foreground/72 sm:px-6">
+                          <p className="px-5 pb-6 text-[0.96rem] leading-relaxed text-blue-900/70 sm:px-6">
                             {item.a}
                           </p>
                         </motion.div>

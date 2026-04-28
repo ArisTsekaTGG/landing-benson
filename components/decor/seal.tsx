@@ -27,26 +27,22 @@ export const Seal = ({
   variant = "medallion",
   tint = "gold",
 }: SealProps) => {
-  const stroke = tint === "gold" ? "url(#seal-gold)" : "rgba(245,239,224,0.8)";
-  const strokeFlat = tint === "gold" ? "#d4a248" : "#f5efe0";
+  // tint="gold" historical name kept; both tints now resolve to navy/cream blue.
+  const stroke = tint === "ink" ? "rgba(250,248,243,0.85)" : "#1f4da6";
+  const strokeFlat = tint === "ink" ? "#faf8f3" : "#1f4da6";
 
   return (
     <svg
       width={size}
       height={size}
       viewBox="0 0 200 200"
-      className={cn("text-gold-400", className)}
+      className={cn(className)}
       aria-hidden
     >
       <defs>
-        <linearGradient id="seal-gold" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f3cf91" />
-          <stop offset="55%" stopColor="#d4a248" />
-          <stop offset="100%" stopColor="#7a5818" />
-        </linearGradient>
         <radialGradient id="seal-fill" cx="50%" cy="40%" r="65%">
-          <stop offset="0%" stopColor="rgba(232,184,111,0.06)" />
-          <stop offset="100%" stopColor="rgba(232,184,111,0)" />
+          <stop offset="0%" stopColor="rgba(31,77,166,0.06)" />
+          <stop offset="100%" stopColor="rgba(31,77,166,0)" />
         </radialGradient>
         {/* Curved baseline for rim text — full circle starting top-centre. */}
         <path

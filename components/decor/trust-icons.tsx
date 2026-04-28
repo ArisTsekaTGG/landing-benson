@@ -2,7 +2,7 @@ import { cn } from "@/lib/cn";
 
 const wrap = (className?: string) =>
   cn(
-    "h-9 w-9 shrink-0 text-gold-400",
+    "h-9 w-9 shrink-0 text-blue-700",
     className,
   );
 

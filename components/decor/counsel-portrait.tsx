@@ -28,16 +28,16 @@ const CobyPortrait = ({ className }: { className?: string }) => (
         <stop offset="100%" stopColor="#06081a" />
       </linearGradient>
       <linearGradient id="coby-rim" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#ff5aa3" stopOpacity="0.95" />
-        <stop offset="100%" stopColor="#ff2d8a" stopOpacity="0" />
+        <stop offset="0%" stopColor="#2554a0" stopOpacity="0.95" />
+        <stop offset="100%" stopColor="#1f4da6" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="coby-suit" x1="0.3" y1="0" x2="0.7" y2="1">
         <stop offset="0%" stopColor="#1c2554" />
         <stop offset="100%" stopColor="#06081a" />
       </linearGradient>
       <radialGradient id="coby-spot" cx="50%" cy="20%" r="80%">
-        <stop offset="0%" stopColor="#ff85bc" stopOpacity="0.18" />
-        <stop offset="100%" stopColor="#ff85bc" stopOpacity="0" />
+        <stop offset="0%" stopColor="#5184d0" stopOpacity="0.18" />
+        <stop offset="100%" stopColor="#5184d0" stopOpacity="0" />
       </radialGradient>
     </defs>
 
@@ -46,8 +46,8 @@ const CobyPortrait = ({ className }: { className?: string }) => (
     <rect width="480" height="600" fill="url(#coby-spot)" />
 
     {/* decorative ornament hairline — gold */}
-    <path d="M40 540 Q240 510 440 540" stroke="#d4a248" strokeWidth="1" fill="none" opacity="0.5" />
-    <path d="M60 552 L420 552" stroke="#d4a248" strokeWidth="0.5" fill="none" opacity="0.3" />
+    <path d="M40 540 Q240 510 440 540" stroke="#1f4da6" strokeWidth="1" fill="none" opacity="0.5" />
+    <path d="M60 552 L420 552" stroke="#1f4da6" strokeWidth="0.5" fill="none" opacity="0.3" />
 
     {/* shoulders */}
     <path
@@ -60,7 +60,7 @@ const CobyPortrait = ({ className }: { className?: string }) => (
     {/* shirt */}
     <path d="M210 410 L220 470 L240 500 L260 470 L270 410 Z" fill="#f5efe0" />
     {/* tie — magenta */}
-    <path d="M232 420 L226 500 L240 514 L254 500 L248 420 Z" fill="#ff2d8a" />
+    <path d="M232 420 L226 500 L240 514 L254 500 L248 420 Z" fill="#1f4da6" />
     <path d="M232 420 L248 420 L240 432 Z" fill="#06081a" />
     {/* head */}
     <ellipse cx="240" cy="265" rx="92" ry="110" fill="#3a2a1a" />
@@ -91,10 +91,10 @@ const CobyPortrait = ({ className }: { className?: string }) => (
     />
     {/* Architectural roundel — replaces the gold sparkle */}
     <g transform="translate(380 430)" opacity="0.5">
-      <circle cx="0" cy="0" r="20" fill="none" stroke="#d4a248" strokeWidth="0.9" />
-      <circle cx="0" cy="0" r="13" fill="none" stroke="#d4a248" strokeWidth="0.5" opacity="0.7" />
-      <line x1="-9" y1="0" x2="9" y2="0" stroke="#d4a248" strokeWidth="0.7" strokeLinecap="round" />
-      <line x1="0" y1="-9" x2="0" y2="9" stroke="#d4a248" strokeWidth="0.7" strokeLinecap="round" />
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#1f4da6" strokeWidth="0.9" />
+      <circle cx="0" cy="0" r="13" fill="none" stroke="#1f4da6" strokeWidth="0.5" opacity="0.7" />
+      <line x1="-9" y1="0" x2="9" y2="0" stroke="#1f4da6" strokeWidth="0.7" strokeLinecap="round" />
+      <line x1="0" y1="-9" x2="0" y2="9" stroke="#1f4da6" strokeWidth="0.7" strokeLinecap="round" />
     </g>
   </svg>
 );
@@ -112,24 +112,24 @@ const DavidPortrait = ({ className }: { className?: string }) => (
         <stop offset="100%" stopColor="#06081a" />
       </linearGradient>
       <linearGradient id="david-rim" x1="1" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#f3cf91" stopOpacity="0.95" />
-        <stop offset="100%" stopColor="#d4a248" stopOpacity="0" />
+        <stop offset="0%" stopColor="#b0c8e8" stopOpacity="0.95" />
+        <stop offset="100%" stopColor="#1f4da6" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="david-suit" x1="0.3" y1="0" x2="0.7" y2="1">
         <stop offset="0%" stopColor="#2a1758" />
         <stop offset="100%" stopColor="#0a0e27" />
       </linearGradient>
       <radialGradient id="david-spot" cx="50%" cy="20%" r="80%">
-        <stop offset="0%" stopColor="#f3cf91" stopOpacity="0.16" />
-        <stop offset="100%" stopColor="#f3cf91" stopOpacity="0" />
+        <stop offset="0%" stopColor="#b0c8e8" stopOpacity="0.16" />
+        <stop offset="100%" stopColor="#b0c8e8" stopOpacity="0" />
       </radialGradient>
     </defs>
 
     <rect width="480" height="600" fill="url(#david-bg)" />
     <rect width="480" height="600" fill="url(#david-spot)" />
 
-    <path d="M40 540 Q240 510 440 540" stroke="#d4a248" strokeWidth="1" fill="none" opacity="0.5" />
-    <path d="M60 552 L420 552" stroke="#d4a248" strokeWidth="0.5" fill="none" opacity="0.3" />
+    <path d="M40 540 Q240 510 440 540" stroke="#1f4da6" strokeWidth="1" fill="none" opacity="0.5" />
+    <path d="M60 552 L420 552" stroke="#1f4da6" strokeWidth="0.5" fill="none" opacity="0.3" />
 
     {/* shoulders */}
     <path
@@ -140,7 +140,7 @@ const DavidPortrait = ({ className }: { className?: string }) => (
     <path d="M300 410 L330 470 L280 530 L240 460 Z" fill="#06081a" />
     <path d="M210 410 L220 470 L240 500 L260 470 L270 410 Z" fill="#f5efe0" />
     {/* tie — burgundy */}
-    <path d="M232 420 L226 500 L240 514 L254 500 L248 420 Z" fill="#7a1f3a" />
+    <path d="M232 420 L226 500 L240 514 L254 500 L248 420 Z" fill="#163d85" />
     <path d="M232 420 L248 420 L240 432 Z" fill="#06081a" />
     {/* pocket square */}
     <path d="M306 470 L336 470 L330 482 L306 478 Z" fill="#f5efe0" />
@@ -155,7 +155,7 @@ const DavidPortrait = ({ className }: { className?: string }) => (
     <path d="M158 232 Q170 222 184 232" stroke="#5a4a3a" strokeWidth="2" fill="none" opacity="0.6" />
     <path d="M306 232 Q318 222 332 232" stroke="#5a4a3a" strokeWidth="2" fill="none" opacity="0.6" />
     {/* glasses — gold rim */}
-    <g stroke="#e8b86f" strokeWidth="2.4" fill="none">
+    <g stroke="#5184d0" strokeWidth="2.4" fill="none">
       <circle cx="208" cy="265" r="20" />
       <circle cx="272" cy="265" r="20" />
       <line x1="228" y1="265" x2="252" y2="265" />
@@ -175,10 +175,10 @@ const DavidPortrait = ({ className }: { className?: string }) => (
     <path d="M410 480 L420 600" stroke="url(#david-rim)" strokeWidth="3.5" fill="none" opacity="0.8" />
     {/* Architectural roundel ornament */}
     <g transform="translate(100 430)" opacity="0.5">
-      <circle cx="0" cy="0" r="18" fill="none" stroke="#ff85bc" strokeWidth="0.9" />
-      <circle cx="0" cy="0" r="11" fill="none" stroke="#ff85bc" strokeWidth="0.5" opacity="0.7" />
-      <line x1="-8" y1="0" x2="8" y2="0" stroke="#ff85bc" strokeWidth="0.7" strokeLinecap="round" />
-      <line x1="0" y1="-8" x2="0" y2="8" stroke="#ff85bc" strokeWidth="0.7" strokeLinecap="round" />
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#5184d0" strokeWidth="0.9" />
+      <circle cx="0" cy="0" r="11" fill="none" stroke="#5184d0" strokeWidth="0.5" opacity="0.7" />
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="#5184d0" strokeWidth="0.7" strokeLinecap="round" />
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="#5184d0" strokeWidth="0.7" strokeLinecap="round" />
     </g>
   </svg>
 );

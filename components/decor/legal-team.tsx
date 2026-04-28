@@ -21,26 +21,25 @@ export const LegalTeam = ({ className }: LegalTeamProps) => (
   >
     <defs>
       <linearGradient id="lt-bg" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#0e0c30" />
-        <stop offset="60%" stopColor="#0a0e27" />
-        <stop offset="100%" stopColor="#06081a" />
+        <stop offset="0%" stopColor="#0f2e63" />
+        <stop offset="100%" stopColor="#0a2456" />
       </linearGradient>
       <linearGradient id="lt-rim-gold" x1="1" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#f3cf91" stopOpacity="0.85" />
-        <stop offset="100%" stopColor="#d4a248" stopOpacity="0" />
+        <stop offset="0%" stopColor="#7ea5dc" stopOpacity="0.7" />
+        <stop offset="100%" stopColor="#5184d0" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="lt-suit" x1="0.3" y1="0" x2="0.7" y2="1">
-        <stop offset="0%" stopColor="#1c2554" />
-        <stop offset="100%" stopColor="#06081a" />
+        <stop offset="0%" stopColor="#142250" />
+        <stop offset="100%" stopColor="#06091e" />
       </linearGradient>
       <linearGradient id="lt-suit-2" x1="0.3" y1="0" x2="0.7" y2="1">
-        <stop offset="0%" stopColor="#2a1758" />
-        <stop offset="100%" stopColor="#0a0e27" />
+        <stop offset="0%" stopColor="#1c2e6e" />
+        <stop offset="100%" stopColor="#0a2456" />
       </linearGradient>
       <linearGradient id="lt-car" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#26305a" />
-        <stop offset="60%" stopColor="#141a3a" />
-        <stop offset="100%" stopColor="#06081a" />
+        <stop offset="0%" stopColor="#2554a0" />
+        <stop offset="60%" stopColor="#142250" />
+        <stop offset="100%" stopColor="#06091e" />
       </linearGradient>
     </defs>
 
@@ -53,7 +52,7 @@ export const LegalTeam = ({ className }: LegalTeamProps) => (
       y1="640"
       x2="560"
       y2="640"
-      stroke="#d4a248"
+      stroke="#7ea5dc"
       strokeWidth="0.6"
       opacity="0.55"
     />
@@ -62,7 +61,7 @@ export const LegalTeam = ({ className }: LegalTeamProps) => (
       y1="652"
       x2="520"
       y2="652"
-      stroke="#d4a248"
+      stroke="#7ea5dc"
       strokeWidth="0.4"
       opacity="0.3"
     />
@@ -84,10 +83,10 @@ export const LegalTeam = ({ className }: LegalTeamProps) => (
       {/* Wheels */}
       <circle cx="105" cy="220" r="36" fill="#06081a" />
       <circle cx="105" cy="220" r="20" fill="#1c2554" />
-      <circle cx="105" cy="220" r="4" fill="#d4a248" opacity="0.7" />
+      <circle cx="105" cy="220" r="4" fill="#7ea5dc" opacity="0.7" />
       <circle cx="395" cy="220" r="36" fill="#06081a" />
       <circle cx="395" cy="220" r="20" fill="#1c2554" />
-      <circle cx="395" cy="220" r="4" fill="#d4a248" opacity="0.7" />
+      <circle cx="395" cy="220" r="4" fill="#7ea5dc" opacity="0.7" />
     </g>
 
     {/* Counsel #1 — left, tablet under arm */}
@@ -102,7 +101,7 @@ export const LegalTeam = ({ className }: LegalTeamProps) => (
       {/* Shirt */}
       <path d="M -14 70 L -8 130 L 0 165 L 8 130 L 14 70 L 0 60 Z" fill="#f5efe0" />
       {/* Tie */}
-      <path d="M -6 80 L -10 165 L 0 175 L 10 165 L 6 80 Z" fill="#7a1f3a" />
+      <path d="M -6 80 L -10 165 L 0 175 L 10 165 L 6 80 Z" fill="#1f4da6" />
       <path d="M -6 80 L 6 80 L 0 92 Z" fill="#06081a" />
       {/* Head */}
       <ellipse cx="0" cy="20" rx="36" ry="44" fill="#3a2a1a" />
@@ -119,11 +118,11 @@ export const LegalTeam = ({ className }: LegalTeamProps) => (
         opacity="0.7"
       />
       {/* Tablet */}
-      <rect x="40" y="230" width="60" height="84" rx="3" fill="#06081a" stroke="#d4a248" strokeWidth="0.8" opacity="0.85" />
+      <rect x="40" y="230" width="60" height="84" rx="3" fill="#06081a" stroke="#7ea5dc" strokeWidth="0.8" opacity="0.85" />
       <rect x="44" y="234" width="52" height="68" rx="2" fill="#11163d" />
-      <line x1="50" y1="250" x2="86" y2="250" stroke="#d4a248" strokeWidth="0.6" opacity="0.45" />
-      <line x1="50" y1="258" x2="80" y2="258" stroke="#d4a248" strokeWidth="0.6" opacity="0.3" />
-      <line x1="50" y1="266" x2="84" y2="266" stroke="#d4a248" strokeWidth="0.6" opacity="0.3" />
+      <line x1="50" y1="250" x2="86" y2="250" stroke="#7ea5dc" strokeWidth="0.6" opacity="0.45" />
+      <line x1="50" y1="258" x2="80" y2="258" stroke="#7ea5dc" strokeWidth="0.6" opacity="0.3" />
+      <line x1="50" y1="266" x2="84" y2="266" stroke="#7ea5dc" strokeWidth="0.6" opacity="0.3" />
     </g>
 
     {/* Counsel #2 — right, hand at side */}
@@ -146,9 +145,9 @@ export const LegalTeam = ({ className }: LegalTeamProps) => (
         fill="#1a1208"
       />
       {/* Glasses */}
-      <circle cx="-12" cy="14" r="8" fill="none" stroke="#d4a248" strokeWidth="1.2" opacity="0.85" />
-      <circle cx="12" cy="14" r="8" fill="none" stroke="#d4a248" strokeWidth="1.2" opacity="0.85" />
-      <line x1="-4" y1="14" x2="4" y2="14" stroke="#d4a248" strokeWidth="1.2" opacity="0.85" />
+      <circle cx="-12" cy="14" r="8" fill="none" stroke="#7ea5dc" strokeWidth="1.2" opacity="0.85" />
+      <circle cx="12" cy="14" r="8" fill="none" stroke="#7ea5dc" strokeWidth="1.2" opacity="0.85" />
+      <line x1="-4" y1="14" x2="4" y2="14" stroke="#7ea5dc" strokeWidth="1.2" opacity="0.85" />
       {/* Subtle gold rim light */}
       <path
         d="M 50 70 L 70 200 L 78 360 L 50 420"

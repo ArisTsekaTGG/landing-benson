@@ -12,17 +12,20 @@ export const Philosophy = () => {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const decorY = useTransform(scrollYProgress, [0, 1], [80, reduce ? 80 : -80]);
+  const decorY = useTransform(scrollYProgress, [0, 1], [60, reduce ? 60 : -60]);
 
   return (
     <section
       ref={ref}
-      className="section-cv relative isolate overflow-hidden bg-cream-50 py-28 text-ink-800 sm:py-36"
+      className="section-cv relative isolate overflow-hidden bg-cream-50 py-28 sm:py-36"
     >
       <motion.div
         style={{ y: decorY, willChange: "transform" }}
-        className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,45,138,0.08),transparent_55%),radial-gradient(circle_at_bottom_left,rgba(212,162,72,0.18),transparent_55%)]"
-      />
+        className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2"
+        aria-hidden
+      >
+        <div className="mx-auto h-px w-full max-w-3xl bg-blue-100" />
+      </motion.div>
 
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
         <motion.div
@@ -32,9 +35,7 @@ export const Philosophy = () => {
           transition={{ duration: 0.7, ease: EASE_OUT }}
           className="text-center"
         >
-          <span className="rule" style={{ color: "#7a5818" }}>
-            Our philosophy
-          </span>
+          <span className="rule">Our philosophy</span>
         </motion.div>
 
         <motion.blockquote
@@ -44,19 +45,23 @@ export const Philosophy = () => {
           transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.1 }}
           className="mt-10 text-balance"
         >
-          {/* Opening glyph */}
-          <svg viewBox="0 0 80 80" className="mx-auto mb-6 h-12 w-12 text-magenta-500" fill="currentColor" aria-hidden>
+          <svg
+            viewBox="0 0 80 80"
+            className="mx-auto mb-6 h-12 w-12 text-blue-700"
+            fill="currentColor"
+            aria-hidden
+          >
             <path d="M30 20c-10 0-16 6-16 18v22h22v-22h-12c0-6 4-10 8-10V20zm32 0c-10 0-16 6-16 18v22h22v-22h-12c0-6 4-10 8-10V20z" />
           </svg>
-          <p className="font-display text-[clamp(1.5rem,2.6vw,2rem)] font-medium leading-[1.3] tracking-[-0.01em] text-ink-900">
+          <p className="font-display text-[clamp(1.5rem,2.6vw,2rem)] font-medium leading-[1.3] tracking-[-0.01em] text-blue-900">
             Benson Goldstein recognises that the complexity of legal cases can often be associated
             with high costs, creating formidable barriers that prevent many from pursuing their
             rightful claims.
           </p>
-          <p className="mt-6 font-display text-[clamp(1.2rem,2vw,1.55rem)] leading-[1.45] text-ink-700">
+          <p className="mt-6 font-display text-[clamp(1.2rem,2vw,1.55rem)] leading-[1.45] text-blue-900/80">
             We pride ourselves on being{" "}
-            <span className="font-italic text-magenta-500">approachable</span>,{" "}
-            <span className="font-italic text-magenta-500">transparent</span>, and entirely
+            <span className="font-italic text-blue-700">approachable</span>,{" "}
+            <span className="font-italic text-blue-700">transparent</span>, and entirely
             client-focused — explaining complex legal jargon in plain English and delivering
             regular updates so our clients feel heard, supported, and confident throughout the
             process.
@@ -70,11 +75,11 @@ export const Philosophy = () => {
           transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.3 }}
           className="mt-10 flex flex-col items-center gap-2"
         >
-          <span className="inline-block h-px w-12 bg-gold-500/50" />
-          <span className="font-display text-[0.92rem] uppercase tracking-[0.22em] text-ink-700/75">
+          <span className="inline-block h-px w-12 bg-blue-300" />
+          <span className="font-display text-[0.92rem] uppercase tracking-[0.22em] text-blue-900/75">
             Coby Benson · David Goldstein
           </span>
-          <span className="text-[0.78rem] text-ink-700/60">Founding solicitors</span>
+          <span className="text-[0.78rem] text-blue-900/55">Founding solicitors</span>
         </motion.div>
       </div>
     </section>

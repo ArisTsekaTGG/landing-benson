@@ -14,14 +14,14 @@ export const SpotlightBeams = ({ className }: SpotlightBeamsProps) => (
   >
     <defs>
       <linearGradient id="beam-magenta" x1="0.5" y1="0" x2="0.5" y2="1">
-        <stop offset="0%" stopColor="#ff2d8a" stopOpacity="0.0" />
-        <stop offset="20%" stopColor="#ff2d8a" stopOpacity="0.18" />
-        <stop offset="100%" stopColor="#ff2d8a" stopOpacity="0" />
+        <stop offset="0%" stopColor="#1f4da6" stopOpacity="0.0" />
+        <stop offset="20%" stopColor="#1f4da6" stopOpacity="0.18" />
+        <stop offset="100%" stopColor="#1f4da6" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="beam-gold" x1="0.5" y1="0" x2="0.5" y2="1">
-        <stop offset="0%" stopColor="#e8b86f" stopOpacity="0" />
-        <stop offset="20%" stopColor="#e8b86f" stopOpacity="0.22" />
-        <stop offset="100%" stopColor="#e8b86f" stopOpacity="0" />
+        <stop offset="0%" stopColor="#5184d0" stopOpacity="0" />
+        <stop offset="20%" stopColor="#5184d0" stopOpacity="0.22" />
+        <stop offset="100%" stopColor="#5184d0" stopOpacity="0" />
       </linearGradient>
       <linearGradient id="beam-cyan" x1="0.5" y1="0" x2="0.5" y2="1">
         <stop offset="0%" stopColor="#7ab2ff" stopOpacity="0" />

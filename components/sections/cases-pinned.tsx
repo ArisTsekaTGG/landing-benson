@@ -82,18 +82,13 @@ export const CasesPinned = () => {
   return (
     <section
       ref={sectionRef}
-      className="section-cv relative isolate bg-[#06081a]"
-      // Roughly one viewport per card after the first, capped to keep it punchy.
+      className="section-cv relative isolate bg-cream-50"
       style={{ height: reduce ? "auto" : `${CASES.length * 80}vh` }}
     >
       <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
-        {/* atmospheric backdrop */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_25%_30%,rgba(255,45,138,0.18),transparent_60%),radial-gradient(ellipse_60%_50%_at_85%_75%,rgba(212,162,72,0.12),transparent_60%)]" />
-        <div className="grain pointer-events-none absolute inset-0 opacity-30" />
-
         {/* hairlines */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/30 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-blue-100" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-blue-100" />
 
         {/* heading row */}
         <motion.header
@@ -102,13 +97,13 @@ export const CasesPinned = () => {
         >
           <div>
             <span className="rule">Cases we recover</span>
-            <h2 className="mt-3 max-w-2xl font-display text-[clamp(2rem,4.4vw,3.4rem)] font-medium leading-[1.02] tracking-[-0.02em] text-balance">
-              Five chapters of finance that{" "}
-              <span className="font-italic text-magenta-400">we know intimately.</span>
+            <h2 className="mt-3 max-w-2xl font-display text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.02] tracking-[-0.02em] text-blue-900 text-balance">
+              Five types of finance{" "}
+              <span className="font-italic text-blue-700">we know intimately.</span>
             </h2>
           </div>
-          <div className="flex items-baseline gap-3 self-end font-display text-foreground/65">
-            <motion.span style={{ scale: counterScale }} className="text-[1.6rem] text-foreground">
+          <div className="flex items-baseline gap-3 self-end font-display text-blue-900/65">
+            <motion.span style={{ scale: counterScale }} className="text-[1.6rem] text-blue-900">
               {counter}
             </motion.span>
             <span className="text-[0.95rem]">/ {`0${CASES.length}`.slice(-2)}</span>
@@ -128,7 +123,7 @@ export const CasesPinned = () => {
         </div>
 
         {/* scroll hint */}
-        <div className="relative z-10 flex items-center justify-between gap-4 px-5 pb-8 text-[0.74rem] uppercase tracking-[0.18em] text-foreground/55 sm:px-10 lg:px-16">
+        <div className="relative z-10 flex items-center justify-between gap-4 px-5 pb-8 text-[0.74rem] uppercase tracking-[0.18em] text-blue-900/55 sm:px-10 lg:px-16">
           <span className="hidden items-center gap-2 sm:inline-flex">
             <Hairline />
             Scroll to advance
@@ -157,15 +152,15 @@ const CaseCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px -20% 0px 0px" }}
       transition={{ duration: 0.7, delay: idx * 0.05, ease: EASE_OUT }}
-      className="card-ink relative flex h-[60vh] min-h-[420px] w-[80vw] shrink-0 flex-col justify-between rounded-[28px] bg-gradient-to-br from-[#0d1234] via-[#0a0e27] to-[#0d1234] p-7 sm:w-[58vw] sm:p-9 lg:w-[42vw] lg:p-12"
+      className="relative flex h-[60vh] min-h-[420px] w-[80vw] shrink-0 flex-col justify-between rounded-[28px] border border-blue-100 bg-white p-7 shadow-[0_24px_60px_-30px_rgba(15,46,99,0.18)] sm:w-[58vw] sm:p-9 lg:w-[42vw] lg:p-12"
     >
       {/* ornamental top */}
       <div className="flex items-start justify-between">
         <span className="rule">{c.chapter}</span>
         <span
-          className="font-display text-[clamp(3rem,7vw,5.5rem)] font-medium leading-none tracking-[-0.04em] text-transparent"
+          className="font-display text-[clamp(3rem,7vw,5.5rem)] font-medium leading-none tracking-[-0.04em]"
           style={{
-            WebkitTextStroke: "1.4px rgba(232,184,111,0.6)",
+            WebkitTextStroke: "1.4px rgba(31,77,166,0.45)",
             color: "transparent",
           }}
           aria-hidden
@@ -175,26 +170,26 @@ const CaseCard = ({
       </div>
 
       <div>
-        <h3 className="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] font-medium leading-[1.02] tracking-[-0.02em] text-balance">
+        <h3 className="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] font-semibold leading-[1.02] tracking-[-0.02em] text-blue-900 text-balance">
           {c.title}
         </h3>
-        <p className="mt-4 max-w-md text-[1rem] leading-relaxed text-foreground/72">
+        <p className="mt-4 max-w-md text-[1rem] leading-relaxed text-blue-900/70">
           {c.excerpt}
         </p>
       </div>
 
-      <div className="flex items-end justify-between gap-4 border-t border-gold-400/15 pt-5">
+      <div className="flex items-end justify-between gap-4 border-t border-blue-100 pt-5">
         <div>
-          <div className="text-[0.74rem] uppercase tracking-[0.18em] text-foreground/55">
+          <div className="text-[0.74rem] uppercase tracking-[0.18em] text-blue-900/60">
             {c.metric}
           </div>
-          <div className="mt-1 font-display text-[clamp(1.8rem,3vw,2.4rem)] font-semibold tracking-[-0.02em] text-magenta-400">
+          <div className="mt-1 font-display text-[clamp(1.8rem,3vw,2.4rem)] font-semibold tracking-[-0.02em] text-blue-700">
             {c.value}
           </div>
         </div>
         <a
           href="#hero"
-          className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-[0.84rem] text-foreground transition-colors hover:border-magenta-400/50 hover:bg-magenta-500/10"
+          className="group inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-[0.84rem] text-blue-800 transition-colors hover:border-blue-700 hover:bg-blue-50"
         >
           Check eligibility
           <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" aria-hidden>
@@ -207,7 +202,7 @@ const CaseCard = ({
 };
 
 const Hairline = () => (
-  <span className="inline-block h-px w-7 bg-gradient-to-r from-transparent via-gold-400/60 to-transparent" />
+  <span className="inline-block h-px w-7 bg-blue-300" />
 );
 
 const ProgressDot = ({
@@ -224,7 +219,7 @@ const ProgressDot = ({
   return (
     <motion.span
       style={{ opacity, width }}
-      className="inline-block h-px bg-gold-300"
+      className="inline-block h-px bg-blue-700"
     />
   );
 };

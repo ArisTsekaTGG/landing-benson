@@ -45,7 +45,7 @@ export const EditorialWatermark = ({
     center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
   }[position];
 
-  const stroke = tone === "ink" ? "rgba(232,184,111,0.16)" : "rgba(122,88,24,0.18)";
+  const stroke = tone === "ink" ? "rgba(31,77,166,0.12)" : "rgba(15,46,99,0.10)";
 
   return (
     <div

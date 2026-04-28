@@ -2,34 +2,32 @@
 
 import { motion } from "motion/react";
 import {
+  IconStopwatch,
   IconHandshake,
-  IconClipboard,
   IconCounsel,
   IconShield,
-  IconRibbon,
-  IconChat,
+  IconScales,
 } from "@/components/decor/trust-icons";
 
 const ITEMS = [
+  { icon: IconStopwatch, title: "60-second check", body: "Quick and easy eligibility check." },
   { icon: IconHandshake, title: "No win, no fee", body: "You don't pay unless we win." },
-  { icon: IconClipboard, title: "Clear, simple process", body: "We handle everything." },
-  { icon: IconCounsel, title: "Expert legal support", body: "Specialist team on your side." },
-  { icon: IconShield, title: "Your data is safe", body: "Secure, encrypted, and private." },
-  { icon: IconRibbon, title: "FCA-regulated", body: "Authorised, regulated claims." },
-  { icon: IconChat, title: "Straightforward guidance", body: "Honest advice from real people." },
+  { icon: IconCounsel, title: "Legal experts on hand", body: "Specialist support every step of the way." },
+  { icon: IconScales, title: "Simple online process", body: "All online, clear and straightforward." },
+  { icon: IconShield, title: "FCA-regulated", body: "Authorised and regulated claims." },
 ];
 
 export const TrustBar = () => {
   return (
-    <section className="relative -mt-20 px-4 sm:px-6 lg:px-8 z-10">
+    <section className="relative -mt-16 px-4 sm:px-6 lg:px-8 z-10">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-10% 0px" }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto max-w-7xl overflow-hidden rounded-[28px] border border-gold-400/25 bg-gradient-to-br from-[#0d1234] via-[#0f0e2c] to-[#0a0a22] p-2 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]"
+        className="glass-light mx-auto max-w-6xl overflow-hidden rounded-[20px] shadow-[0_24px_60px_-30px_rgba(15,46,99,0.25)]"
       >
-        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[22px] bg-white/[0.06] sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 divide-y divide-blue-100/70 sm:grid-cols-3 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
           {ITEMS.map(({ icon: Icon, title, body }, idx) => (
             <motion.div
               key={title}
@@ -37,18 +35,17 @@ export const TrustBar = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: idx * 0.07, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative flex flex-col items-start gap-3 bg-[#0c1133] p-5 transition-colors hover:bg-[#11163d] sm:p-6"
+              className="group relative flex items-center gap-3 px-5 py-5 sm:px-6"
             >
-              <div className="rounded-xl bg-gradient-to-br from-gold-400/15 to-magenta-500/10 p-2.5 ring-1 ring-gold-400/20 transition-all group-hover:ring-magenta-400/40">
-                <Icon className="h-7 w-7" />
+              <div className="text-blue-700">
+                <Icon className="h-9 w-9" />
               </div>
-              <div>
-                <h3 className="font-display text-[1rem] font-semibold leading-snug text-foreground">
+              <div className="leading-tight">
+                <div className="font-display text-[0.95rem] font-semibold text-blue-900">
                   {title}
-                </h3>
-                <p className="mt-1 text-[0.82rem] leading-snug text-foreground/65">{body}</p>
+                </div>
+                <div className="mt-0.5 text-[0.78rem] text-blue-900/65">{body}</div>
               </div>
-              <div className="pointer-events-none absolute inset-x-3 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-400/0 to-transparent transition-all group-hover:via-magenta-400/40" />
             </motion.div>
           ))}
         </div>

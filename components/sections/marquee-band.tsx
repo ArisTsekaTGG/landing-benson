@@ -84,11 +84,8 @@ export const MarqueeBand = ({
   return (
     <div
       aria-hidden
-      className="section-cv relative isolate overflow-hidden border-y border-gold-400/20 bg-[#06081a] py-7 sm:py-9"
+      className="section-cv relative isolate overflow-hidden border-y border-blue-100 bg-cream-50 py-7 sm:py-9"
     >
-      {/* atmosphere */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(255,45,138,0.08),transparent_70%)]" />
-
       <motion.div
         ref={trackRef}
         style={{ x: baseX, willChange: "transform" }}
@@ -96,7 +93,7 @@ export const MarqueeBand = ({
       >
         {items.map((phrase, i) => (
           <span key={i} className="flex shrink-0 items-center gap-8">
-            <span className="font-display text-[clamp(2.4rem,6vw,5rem)] font-medium leading-none tracking-[-0.02em] text-foreground/85">
+            <span className="font-display text-[clamp(2.4rem,6vw,5rem)] font-medium leading-none tracking-[-0.02em] text-blue-800/80">
               {phrase}
             </span>
             <Ornament />
@@ -107,16 +104,15 @@ export const MarqueeBand = ({
   );
 };
 
-/* Typographic fleuron — replaces the eight-point star with a quieter editorial
- * separator. Two opposing serifs and a small diamond, drawn in champagne gold. */
+/* Typographic fleuron — quiet editorial separator drawn in royal blue. */
 const Ornament = () => (
-  <svg viewBox="0 0 64 64" className="h-7 w-7 shrink-0 text-gold-400" fill="none" aria-hidden>
-    <g stroke="#d4a248" strokeWidth="1.4" strokeLinecap="round">
+  <svg viewBox="0 0 64 64" className="h-7 w-7 shrink-0" fill="none" aria-hidden>
+    <g stroke="#1f4da6" strokeWidth="1.4" strokeLinecap="round">
       <path d="M14 32 L26 32" />
       <path d="M38 32 L50 32" />
       <path d="M22 26 Q26 32 22 38" fill="none" />
       <path d="M42 26 Q38 32 42 38" fill="none" />
     </g>
-    <path d="M32 26 L38 32 L32 38 L26 32 Z" fill="#d4a248" opacity="0.9" />
+    <path d="M32 26 L38 32 L32 38 L26 32 Z" fill="#1f4da6" opacity="0.9" />
   </svg>
 );
