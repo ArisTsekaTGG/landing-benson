@@ -50,7 +50,7 @@ export default function MotorFinancePage() {
           />
         </div>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <Definition
               eyebrow="The basics"
               heading={
@@ -83,7 +83,7 @@ export default function MotorFinancePage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#faf7f2">
+        <ScrollsOver bg="#faf8f3">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <Benefits
               heading={
@@ -119,7 +119,7 @@ export default function MotorFinancePage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <Process
               heading={
                 <>
@@ -150,13 +150,13 @@ export default function MotorFinancePage() {
 
         <MarqueeBand direction="left" baseSpeed={32} />
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <Faq />
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <ServiceCta
               title={
@@ -171,7 +171,7 @@ export default function MotorFinancePage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <ContactBlock />
           </div>

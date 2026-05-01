@@ -47,7 +47,7 @@ export default function UnaffordableLendingPage() {
           />
         </div>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <Definition
               eyebrow="The basics"
               heading={
@@ -81,7 +81,7 @@ export default function UnaffordableLendingPage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#faf7f2">
+        <ScrollsOver bg="#faf8f3">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <Benefits
               heading={
@@ -117,7 +117,7 @@ export default function UnaffordableLendingPage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <Process
               heading={
                 <>
@@ -147,7 +147,7 @@ export default function UnaffordableLendingPage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <ServiceCta
               title={
@@ -161,7 +161,7 @@ export default function UnaffordableLendingPage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#faf7f2">
+        <ScrollsOver bg="#faf8f3">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <ContactBlock variant="cream" />
           </div>

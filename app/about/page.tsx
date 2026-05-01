@@ -55,7 +55,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <CounselBio
               id="coby"
               variant="coby"
@@ -86,13 +86,13 @@ export default function AboutPage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#faf7f2">
+        <ScrollsOver bg="#faf8f3">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <Philosophy />
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <CounselBio
               id="david"
               variant="david"
@@ -125,7 +125,7 @@ export default function AboutPage() {
           </div>
         </ScrollsOver>
 
-        <ScrollsOver bg="#06081a">
+        <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <ContactBlock
               heading="Speak directly with our team."
