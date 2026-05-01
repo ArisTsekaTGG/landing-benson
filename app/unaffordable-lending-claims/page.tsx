@@ -10,7 +10,6 @@ import {
 } from "@/components/sections/service-page-blocks";
 import { ContactBlock } from "@/components/sections/contact-block";
 import { ScrollsOver } from "@/components/sections/scrolls-over";
-import { EditorialWatermark } from "@/components/decor/editorial-watermark";
 import { UnaffordableIllustration } from "@/components/decor/unaffordable-illustration";
 
 export const metadata: Metadata = {
@@ -24,9 +23,7 @@ export default function UnaffordableLendingPage() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <div className="relative">
-          <EditorialWatermark text="release" position="tr" amplitude={160} />
-          <PageHeader
+        <div className="relative">          <PageHeader
             eyebrow="Unaffordable lending claims"
             crumbs={[{ label: "Home", href: "/" }, { label: "Unaffordable lending claims" }]}
             title={
@@ -51,9 +48,7 @@ export default function UnaffordableLendingPage() {
         </div>
 
         <ScrollsOver bg="#06081a">
-          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
-            <EditorialWatermark text="affordability" position="bl" amplitude={200} />
-            <Definition
+          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <Definition
               eyebrow="The basics"
               heading={
                 <>
@@ -123,9 +118,7 @@ export default function UnaffordableLendingPage() {
         </ScrollsOver>
 
         <ScrollsOver bg="#06081a">
-          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
-            <EditorialWatermark text="recovery" position="tr" amplitude={170} />
-            <Process
+          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <Process
               heading={
                 <>
                   Your journey to{" "}

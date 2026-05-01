@@ -13,7 +13,6 @@ import { LegalTeam } from "@/components/decor/legal-team";
 import { MarqueeBand } from "@/components/sections/marquee-band";
 import { ContactBlock } from "@/components/sections/contact-block";
 import { ScrollsOver } from "@/components/sections/scrolls-over";
-import { EditorialWatermark } from "@/components/decor/editorial-watermark";
 
 export const metadata: Metadata = {
   title: "Mis-sold motor finance — Benson Goldstein",
@@ -26,9 +25,7 @@ export default function MotorFinancePage() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <div className="relative">
-          <EditorialWatermark text="finance" position="tr" amplitude={160} />
-          <PageHeader
+        <div className="relative">          <PageHeader
             eyebrow="Mis-sold motor finance"
             crumbs={[{ label: "Home", href: "/" }, { label: "Mis-sold motor finance" }]}
             title={
@@ -54,9 +51,7 @@ export default function MotorFinancePage() {
         </div>
 
         <ScrollsOver bg="#06081a">
-          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
-            <EditorialWatermark text="commission" position="bl" amplitude={180} />
-            <Definition
+          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <Definition
               eyebrow="The basics"
               heading={
                 <>
@@ -125,9 +120,7 @@ export default function MotorFinancePage() {
         </ScrollsOver>
 
         <ScrollsOver bg="#06081a">
-          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
-            <EditorialWatermark text="redress" position="tr" amplitude={170} />
-            <Process
+          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <Process
               heading={
                 <>
                   Your path to <span className="font-italic text-magenta-400">compensation</span>.

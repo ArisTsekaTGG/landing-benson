@@ -7,7 +7,6 @@ import { Philosophy } from "@/components/sections/philosophy";
 import { ContactBlock } from "@/components/sections/contact-block";
 import { ScrollsOver } from "@/components/sections/scrolls-over";
 import { CounselPortrait } from "@/components/decor/counsel-portrait";
-import { EditorialWatermark } from "@/components/decor/editorial-watermark";
 
 export const metadata: Metadata = {
   title: "About — Benson Goldstein",
@@ -20,9 +19,7 @@ export default function AboutPage() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <div className="relative">
-          <EditorialWatermark text="counsel" position="tr" amplitude={140} />
-          <PageHeader
+        <div className="relative">          <PageHeader
             eyebrow="About the firm"
             crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
             title={
@@ -59,9 +56,7 @@ export default function AboutPage() {
         </div>
 
         <ScrollsOver bg="#06081a">
-          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
-            <EditorialWatermark text="Coby" position="bl" amplitude={160} />
-            <CounselBio
+          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <CounselBio
               id="coby"
               variant="coby"
               name="Coby Benson"
@@ -98,9 +93,7 @@ export default function AboutPage() {
         </ScrollsOver>
 
         <ScrollsOver bg="#06081a">
-          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
-            <EditorialWatermark text="David" position="tr" amplitude={160} />
-            <CounselBio
+          <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">            <CounselBio
               id="david"
               variant="david"
               name="David Goldstein"
