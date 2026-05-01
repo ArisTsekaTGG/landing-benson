@@ -10,7 +10,6 @@ import {
 } from "@/components/sections/service-page-blocks";
 import { Faq } from "@/components/sections/faq";
 import { LegalTeam } from "@/components/decor/legal-team";
-import { MarqueeBand } from "@/components/sections/marquee-band";
 import { ContactBlock } from "@/components/sections/contact-block";
 import { ScrollsOver } from "@/components/sections/scrolls-over";
 
@@ -147,9 +146,6 @@ export default function MotorFinancePage() {
             />
           </div>
         </ScrollsOver>
-
-        <MarqueeBand direction="left" baseSpeed={32} />
-
         <ScrollsOver bg="#ffffff">
           <div className="relative overflow-hidden rounded-t-[36px] lg:rounded-t-[48px]">
             <Faq />
